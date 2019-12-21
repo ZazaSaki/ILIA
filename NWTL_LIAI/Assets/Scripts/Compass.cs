@@ -14,7 +14,10 @@ public class Compass : MonoBehaviour{
     void Update()
     {
         changeNorth();
-        changeMission();
+        if (missionPlace != null)
+            changeMission();
+        else
+            missionLayer.localEulerAngles = northLayer.localEulerAngles;
     }
 
     public void changeNorth(){

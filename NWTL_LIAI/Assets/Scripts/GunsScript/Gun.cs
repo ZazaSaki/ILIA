@@ -21,7 +21,6 @@ public class Gun : MonoBehaviour{
     {
         if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire){
             nextTimeToFire = Time.time + 1f/fireRate;
-            Debug.Log("true");
             Shoot();
         }
 

@@ -27,4 +27,9 @@ public class GameMaster : MonoBehaviour
     {
         
     }
+
+    public void sequence(string id){
+        //string s = (string)list[id];
+        Debug.Log(id);
+    }
 }

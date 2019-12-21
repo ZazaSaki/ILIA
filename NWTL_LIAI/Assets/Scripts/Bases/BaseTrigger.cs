@@ -8,11 +8,10 @@ public class BaseTrigger : MonoBehaviour
     
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(item);
-        Debug.Log("inside");
+        
     }
 
     private void OnTriggerExit(Collider other) {
-        Debug.Log("outside");
+        
  }
 }

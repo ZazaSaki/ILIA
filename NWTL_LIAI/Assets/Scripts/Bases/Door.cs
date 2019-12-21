@@ -19,13 +19,11 @@ public class Door : Tool
         }
 
     public void open(){
-        Debug.Log("open");
         anim.CrossFade("DoorOpen");
         Opened = true;
     }
 
     public void close(){
-        Debug.Log("close");
         anim.CrossFade("CloseDoor");
         Opened = false;
     }
