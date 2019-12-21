@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Bases\BaseTrigger.cs" />
      <Compile Include="Assets\Scripts\Bases\Door.cs" />
      <Compile Include="Assets\Scripts\Compass.cs" />
+     <Compile Include="Assets\Scripts\compassChanger.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
      <Compile Include="Assets\Scripts\GunsScript\Gun.cs" />
      <Compile Include="Assets\Scripts\GunsScript\WeaponSwitching.cs" />

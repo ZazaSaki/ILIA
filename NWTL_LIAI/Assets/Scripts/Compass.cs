@@ -13,14 +13,14 @@ public class Compass : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        changeNorth();
+        updateNorth();
         if (missionPlace != null)
-            changeMission();
+            updateMission();
         else
             missionLayer.localEulerAngles = northLayer.localEulerAngles;
     }
 
-    public void changeNorth(){
+    public void updateNorth(){
         north.z = player.eulerAngles.y;
         northLayer.localEulerAngles = north;
 
@@ -28,7 +28,7 @@ public class Compass : MonoBehaviour{
 
     
     
-    public void changeMission(){
+    public void updateMission(){
         //Director vector to quaternion
         Vector3 vectorDirector = player.position - missionPlace.position;
         mission = Quaternion.LookRotation(vectorDirector);
@@ -41,4 +41,8 @@ public class Compass : MonoBehaviour{
 
         missionLayer.localRotation = mission * Quaternion.Euler(north);
     }//*/
+
+    public void changeMission(Transform newMission){
+        missionPlace = newMission;
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaseParent : MonoBehaviour{
 
-    public string id = "hardCoded";
+    public string id;
     public float health;
     public float r;    
     private bool IsActive = false;
@@ -14,6 +14,7 @@ public class BaseParent : MonoBehaviour{
     
     public GameMaster master;
 
+    
     public void ComputerActivated(){
         if (!IsActive)
         {
