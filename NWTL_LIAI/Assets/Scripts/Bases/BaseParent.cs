@@ -11,8 +11,6 @@ public class BaseParent : MonoBehaviour{
     private bool IsActive = false;
 
     public Door door;
-    
-    public GameMaster master;
 
     
     public void ComputerActivated(){
@@ -32,11 +30,14 @@ public class BaseParent : MonoBehaviour{
 
     
     public void Sequence(){
-        master.sequence(id);
+        gm().sequence(id);
     }
 
     public void UnlockDooor(){
         door.unlockDoor();
     }
     
+    private GameMaster gm (){
+        return FindObjectOfType<GameMaster>(); 
+    }
 }
