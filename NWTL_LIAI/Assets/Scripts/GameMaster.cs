@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour
 {   
     public Hashtable list = new Hashtable();
-    string[] BasePath = {"base1", "base2", "base3"};
+    string[] BasePath = {"base1", "base2", "base3", "base4"};
     public Transform player;
 
     // Start is called before the first frame update
