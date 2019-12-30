@@ -20,7 +20,7 @@ public class Compass : MonoBehaviour{
             missionLayer.localEulerAngles = northLayer.localEulerAngles;
     }
 
-    public void updateNorth(){
+    private void updateNorth(){
         north.z = player.eulerAngles.y;
         northLayer.localEulerAngles = north;
 
@@ -28,7 +28,7 @@ public class Compass : MonoBehaviour{
 
     
     
-    public void updateMission(){
+    private void updateMission(){
         //Director vector to quaternion
         Vector3 vectorDirector = player.position - missionPlace.position;
         mission = Quaternion.LookRotation(vectorDirector);

@@ -20,10 +20,10 @@ public class AmmoUI : MonoBehaviour
         return "Ammo: " + getAmmo().ToString() + "/" + getMaxAmmo().ToString();
     }
     private int getAmmo(){
-        return weaponList.GetactualGun().ammo;
+        return weaponList.GetActualGun().ammo;
     }
 
     private int getMaxAmmo(){
-        return weaponList.GetactualGun().maxAmmo;
+        return weaponList.GetActualGun().maxAmmo;
     }
 }

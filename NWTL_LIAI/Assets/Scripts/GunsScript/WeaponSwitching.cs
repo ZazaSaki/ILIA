@@ -6,7 +6,7 @@ public class WeaponSwitching : MonoBehaviour{
     private Transform actualGun;
     
     public Transform GunList;
-    public int actualGunId = 0;
+    private int actualGunId = 0;
     // Update is called once per frame
     
     private void Start() {
@@ -53,7 +53,7 @@ public class WeaponSwitching : MonoBehaviour{
         }
     }
 
-    public Gun GetactualGun()
+    public Gun GetActualGun()
     {
         return actualGun.GetComponent<Gun>();
     }
