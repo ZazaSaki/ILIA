@@ -2,11 +2,11 @@
 using UnityEngine.UI;
 public class Compass : MonoBehaviour{
 
-    public Vector3 north;
+    private Vector3 north;
     public Transform player;
     
-    public Transform missionPlace;
-    public Quaternion mission;//*/
+    private Transform missionPlace;
+    private Quaternion mission;//*/
  
     public RectTransform northLayer;
     public RectTransform missionLayer;
