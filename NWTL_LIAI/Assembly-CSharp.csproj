@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\Bases\BaseParent.cs" />
      <Compile Include="Assets\Scripts\Bases\BaseTrigger.cs" />
      <Compile Include="Assets\Scripts\Bases\Door.cs" />
-     <Compile Include="Assets\Scripts\Compass.cs" />
      <Compile Include="Assets\Scripts\compassChanger.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
      <Compile Include="Assets\Scripts\GunsScript\Gun.cs" />
@@ -69,15 +68,18 @@
      <Compile Include="Assets\Scripts\IDamageable.cs" />
      <Compile Include="Assets\Scripts\IKillable.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
-     <Compile Include="Assets\Scripts\PlayerScripts\AmmoUI.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\FollowPlayer.cs" />
-     <Compile Include="Assets\Scripts\PlayerScripts\HealthUI.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerInteractor.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Tools\Computer.cs" />
      <Compile Include="Assets\Scripts\Tools\InteractableTriger.cs" />
      <Compile Include="Assets\Scripts\Tools\Tool.cs" />
+     <Compile Include="Assets\Scripts\UI\AmmoUI.cs" />
+     <Compile Include="Assets\Scripts\UI\Compass.cs" />
+     <Compile Include="Assets\Scripts\UI\HealthUI.cs" />
+     <Compile Include="Assets\Scripts\UI\UI_Manager.cs" />
+     <Compile Include="Assets\Scripts\UI\UI_Widget.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/MC/Rep/ILIA/NWTL_LIAI/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
