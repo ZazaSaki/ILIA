@@ -54,7 +54,7 @@ public class WeaponSwitching : MonoBehaviour{
     }
 
     public Gun GetActualGun()
-    {
+    {   
         return actualGun.GetComponent<Gun>();
     }
 }

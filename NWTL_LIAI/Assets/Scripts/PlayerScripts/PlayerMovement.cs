@@ -29,13 +29,14 @@ public class PlayerMovement : MonoBehaviour{
     void Update(){
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+        Debug.Log(isGrounded);
         if (isGrounded && velocity.y < 0){
             if (velocity.y < -Mathf.Sqrt(maxFallHeight * -2f *gravity)){
                 Debug.Log("DamageFall");
                 controller.GetComponent<Health>().TakeDamage(30);
             }
             velocity.y = -2f;
+            Debug.Log(isGrounded);
         }
 
         float x = Input.GetAxis("Horizontal");

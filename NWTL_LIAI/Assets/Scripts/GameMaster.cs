@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameMaster : MonoBehaviour
 {   
     public Hashtable list = new Hashtable();
-    string[] BasePath = {"base1", "base2", "base3", "base4"};
+    string[] BasePath = {"base1", "base2", "base3"};
     public Transform player;
 
     // Start is called before the first frame update
@@ -93,10 +93,17 @@ public class GameMaster : MonoBehaviour
 
     private void goNextBase(string id){
         BaseParent b = findNextBase(id);
+        Debug.Log("This base: " + id);
+        Debug.Log("Next Base: " + b.id);
+        Debug.Log("Next Base Transform: " + b.GetComponent<Transform>());
         //getting the transform of the next base
-        Transform NextBaseTransform =(b == null) ? null : b.GetComponentInParent<Transform>();
+        Transform NextBaseTransform =(b == null) ? null : b.GetComponent<Transform>();
+        
+        Debug.Log("Checking Last: " + NextBaseTransform);
         
         //setting the compass
+
+        Debug.Log(player.GetComponent<compassChanger>());
         player.GetComponent<compassChanger>().PointTo(NextBaseTransform);
     }
 }
