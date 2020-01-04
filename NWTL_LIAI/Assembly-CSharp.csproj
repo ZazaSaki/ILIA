@@ -57,6 +57,7 @@
      <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
      <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
      <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
+     <Compile Include="Assets\Scripts\AIController.cs" />
      <Compile Include="Assets\Scripts\Bases\BaseParent.cs" />
      <Compile Include="Assets\Scripts\Bases\BaseTrigger.cs" />
      <Compile Include="Assets\Scripts\Bases\Door.cs" />
