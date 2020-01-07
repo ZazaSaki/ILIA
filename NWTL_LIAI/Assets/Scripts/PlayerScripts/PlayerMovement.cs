@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour{
 
@@ -29,29 +27,36 @@ public class PlayerMovement : MonoBehaviour{
     void Update(){
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        Debug.Log(isGrounded);
+        
+        
         if (isGrounded && velocity.y < 0){
+            
+            //Chencking Fall Damage
             if (velocity.y < -Mathf.Sqrt(maxFallHeight * -2f *gravity)){
                 Debug.Log("DamageFall");
                 controller.GetComponent<Health>().TakeDamage(30);
             }
+            
+            //Default force on ground
             velocity.y = -2f;
-            Debug.Log(isGrounded);
+            
         }
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        //adding gravity Force
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
+    }
 
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        if (Input.GetButtonDown("Jump") && isGrounded){
+    public void jump(){
+        if (isGrounded){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+    }
+
+    public void walck(float HorizontalAxis, float VerticalAxis){
+        
+        Vector3 move = transform.right * HorizontalAxis + transform.forward * VerticalAxis;
 
         controller.Move(move * speed * Time.deltaTime);
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
     }
 }

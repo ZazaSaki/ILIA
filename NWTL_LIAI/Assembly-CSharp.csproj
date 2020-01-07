@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\IKillable.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\PlayerScripts\KeyHandler.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerInteractor.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerMovement.cs" />

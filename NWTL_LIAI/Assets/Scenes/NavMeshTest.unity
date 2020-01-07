@@ -88,8 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 0b84ec225c389df43abbda0b2f829811,
-    type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -1161,6 +1160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FirstPersonPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936904520999884568, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: maxhealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5626677012928602421, guid: 421acd2d0326f6d4ba992c788989d5ce,
         type: 3}

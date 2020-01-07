@@ -27,6 +27,8 @@ public class AIBehavior : MonoBehaviour{
 
     public void FindPlayer(){
         playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
+        
+        
         Debug.Log("Player Found : " + playerLoc);
     }
 
