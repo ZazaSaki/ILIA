@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 public class Gun : MonoBehaviour{
-
     public float damage = 10f;
     public float impactForce = 30f;
     public float range = 50f;
@@ -10,6 +9,7 @@ public class Gun : MonoBehaviour{
     public int maxAmmo = 10;
 
     private float nextTimeToFire = 0f;
+    public bool IsFiring = false;
 
     public Camera fpsCam;
     // Start is called before the first frame update
@@ -22,8 +22,14 @@ public class Gun : MonoBehaviour{
         if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire){
             nextTimeToFire = Time.time + 1f/fireRate;
             Shoot();
+            IsFiring = true;
         }
 
+        if (IsFiring){
+            if (Time.time >= nextTimeToFire){
+                IsFiring = false;
+            }
+        }
     }
 
     void Shoot(){

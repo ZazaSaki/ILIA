@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 666477151}
   - component: {fileID: 666477156}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: AI_Tester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

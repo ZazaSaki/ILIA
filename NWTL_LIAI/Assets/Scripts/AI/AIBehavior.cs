@@ -26,10 +26,16 @@ public class AIBehavior : MonoBehaviour{
     }
 
     public void FindPlayer(){
+        PlayerMovement player = FindObjectOfType<PlayerMovement>();
+        
+        
         playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
-        
-        
+        playerIsFiring = player.GetComponentInChildren<WeaponSwitching>().GetActualGun().IsFiring;
+        playerIsRunning = player.IsRunning;
+
+
         Debug.Log("Player Found : " + playerLoc);
+        Debug.Log("Is firing : "+ playerIsFiring);
     }
 
     public void FindActiveBase(){
