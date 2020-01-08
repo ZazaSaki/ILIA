@@ -1963,6 +1963,7 @@ GameObject:
   - component: {fileID: 666477153}
   - component: {fileID: 666477152}
   - component: {fileID: 666477151}
+  - component: {fileID: 666477157}
   - component: {fileID: 666477156}
   m_Layer: 0
   m_Name: AI_Tester
@@ -2079,6 +2080,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agent: {fileID: 666477151}
+--- !u!114 &666477157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666477150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1017899cfce624f8e9dd46e2cd1d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxhealth: 100
 --- !u!1 &701584302
 GameObject:
   m_ObjectHideFlags: 0

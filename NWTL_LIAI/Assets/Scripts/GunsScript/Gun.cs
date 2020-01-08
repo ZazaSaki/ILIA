@@ -19,12 +19,6 @@ public class Gun : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire){
-            nextTimeToFire = Time.time + 1f/fireRate;
-            Shoot();
-            IsFiring = true;
-        }
-
         if (IsFiring){
             if (Time.time >= nextTimeToFire){
                 IsFiring = false;
@@ -32,6 +26,14 @@ public class Gun : MonoBehaviour{
         }
     }
 
+    public void Fire(){
+        if (Time.time >= nextTimeToFire){
+            nextTimeToFire = Time.time + 1f/fireRate;
+            Shoot();
+            IsFiring = true;
+        }
+    }
+    
     void Shoot(){
         RaycastHit hit;
         

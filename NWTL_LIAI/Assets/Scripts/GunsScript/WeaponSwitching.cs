@@ -10,21 +10,25 @@ public class WeaponSwitching : MonoBehaviour{
     // Update is called once per frame
     
     private void Start() {
-        selectWeapon();
+        selectWeapon(actualGunId);
     }
     
     void Update(){
 
         
+        
+    }
+
+    public void ChangeWeapon(float MouseWheel){
         int previousWeapon = actualGunId;
         
         //Checking if actualGunId is in GunList range
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f){
+        if (MouseWheel > 0f){
             if (actualGunId < GunList.childCount - 1)
                actualGunId++;
             else actualGunId = 0;
 
-        }else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        }else if (MouseWheel < 0f)
         {
             if (actualGunId > 0)
                 actualGunId--;
@@ -33,16 +37,16 @@ public class WeaponSwitching : MonoBehaviour{
         }
 
         if (actualGunId != previousWeapon){
-            selectWeapon();
+            selectWeapon(actualGunId);
         }
     }
 
-    private void selectWeapon(){
+    public void selectWeapon(int gunID){
         int i = 0;
         
         //setting new weapon
         foreach (Transform weapon in GunList){
-            if (i == actualGunId){
+            if (i == gunID){
                 weapon.gameObject.SetActive(true);
                 actualGun = weapon;
             }else
