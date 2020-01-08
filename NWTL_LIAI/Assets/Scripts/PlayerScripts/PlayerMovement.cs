@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour{
     public Transform groundCheck;
     public LayerMask groundMask;
 
-    public bool IsRunning;
+    public bool IsRunning = false;
     
     Vector3 velocity;
     bool isGrounded;

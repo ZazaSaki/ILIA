@@ -59,6 +59,7 @@
      <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
      <Compile Include="Assets\Scripts\AI\AIBehavior.cs" />
      <Compile Include="Assets\Scripts\AI\AIController.cs" />
+     <Compile Include="Assets\Scripts\AI\DetectionStats.cs" />
      <Compile Include="Assets\Scripts\AI\EnemieParentScript.cs" />
      <Compile Include="Assets\Scripts\Bases\BaseParent.cs" />
      <Compile Include="Assets\Scripts\Bases\BaseTrigger.cs" />

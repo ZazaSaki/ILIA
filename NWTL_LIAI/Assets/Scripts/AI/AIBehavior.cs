@@ -22,7 +22,8 @@ public class AIBehavior : MonoBehaviour{
     void Update()
     {
         FindPlayer();
-        ChasePlayer();
+        IsDetected();
+        //ChasePlayer();
     }
 
     public void FindPlayer(){
@@ -32,10 +33,6 @@ public class AIBehavior : MonoBehaviour{
         playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
         playerIsFiring = player.GetComponentInChildren<WeaponSwitching>().GetActualGun().IsFiring;
         playerIsRunning = player.IsRunning;
-
-
-        Debug.Log("Player Found : " + playerLoc);
-        Debug.Log("Is firing : "+ playerIsFiring);
     }
 
     public void FindActiveBase(){
@@ -43,9 +40,18 @@ public class AIBehavior : MonoBehaviour{
     }
 
     public bool IsDetected(){
-        if (true)
-        {
-            
+        DetectionStats stats = GetComponent<DetectionStats>();
+        float distance = (playerLoc - GetComponent<Transform>().position).magnitude;
+        Debug.Log(distance);
+        
+        if (distance < stats.FireRange){
+            if (playerIsFiring) return true;
+
+            if (distance < stats.RunRange){
+                if (playerIsRunning) return true;
+
+                if (distance < stats.WalckRange)return true;
+            }
         }
         return false;
     }
