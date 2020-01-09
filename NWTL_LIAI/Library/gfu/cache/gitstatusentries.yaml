@@ -1,0 +1,426 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 995438498, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 6
+  lastUpdatedAtString: 2020-01-09T16:01:40.741+00:00
+  initializedAtString: 2020-01-09T15:40:40.636+00:00
+  entries:
+  - path: NWTL_LIAI\Assembly-CSharp-Editor.csproj
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Assembly-CSharp-Editor.csproj"
+    projectPath: Assembly-CSharp-Editor.csproj
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Assembly-CSharp-Editor-firstpass.csproj
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Assembly-CSharp-Editor-firstpass.csproj"
+    projectPath: Assembly-CSharp-Editor-firstpass.csproj
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Assets\Scenes\NavMeshTest.unity
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Assets\\Scenes\\NavMeshTest.unity"
+    projectPath: Assets\Scenes\NavMeshTest.unity
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Assets\Scripts\Interactable.cs
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Assets\\Scripts\\Interactable.cs"
+    projectPath: Assets\Scripts\Interactable.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Assets\Scripts\Inventory.cs
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Assets\\Scripts\\Inventory.cs"
+    projectPath: Assets\Scripts\Inventory.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Assets\Scripts\InventorySystemTest.cs
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Assets\\Scripts\\InventorySystemTest.cs"
+    projectPath: Assets\Scripts\InventorySystemTest.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Assets\Scripts\PlayerScripts\KeyHandler.cs
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Assets\\Scripts\\PlayerScripts\\KeyHandler.cs"
+    projectPath: Assets\Scripts\PlayerScripts\KeyHandler.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\assetDatabase3
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\assetDatabase3"
+    projectPath: Library\assetDatabase3
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\CrashedAssetImports.txt
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\CrashedAssetImports.txt"
+    projectPath: Library\CrashedAssetImports.txt
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\CurrentLayout.dwlt
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\CurrentLayout.dwlt"
+    projectPath: Library\CurrentLayout.dwlt
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\EditorInstance.json
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\EditorInstance.json"
+    projectPath: Library\EditorInstance.json
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\gfu\cache\branches.yaml
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\gfu\\cache\\branches.yaml"
+    projectPath: Library\gfu\cache\branches.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\gfu\cache\gitfilelog.yaml
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\gfu\\cache\\gitfilelog.yaml"
+    projectPath: Library\gfu\cache\gitfilelog.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\gfu\cache\gitlocks.yaml
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\gfu\\cache\\gitlocks.yaml"
+    projectPath: Library\gfu\cache\gitlocks.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\gfu\cache\gitlog.yaml
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\gfu\\cache\\gitlog.yaml"
+    projectPath: Library\gfu\cache\gitlog.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\gfu\\cache\\gitstatusentries.yaml"
+    projectPath: Library\gfu\cache\gitstatusentries.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\gfu\cache\gittrackingstatus.yaml
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\gfu\\cache\\gittrackingstatus.yaml"
+    projectPath: Library\gfu\cache\gittrackingstatus.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\gfu\cache\repoinfo.yaml
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\gfu\\cache\\repoinfo.yaml"
+    projectPath: Library\gfu\cache\repoinfo.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\metadata\17\179b8a17bbd0e434ba99879d0bf8fdf6
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\metadata\\17\\179b8a17bbd0e434ba99879d0bf8fdf6"
+    projectPath: Library\metadata\17\179b8a17bbd0e434ba99879d0bf8fdf6
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\metadata\19\19579efeec63de34198c369c5008a7a1
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\metadata\\19\\19579efeec63de34198c369c5008a7a1"
+    projectPath: Library\metadata\19\19579efeec63de34198c369c5008a7a1
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\metadata\56\56244217b50b12f43b66edecbee5fcd8
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\metadata\\56\\56244217b50b12f43b66edecbee5fcd8"
+    projectPath: Library\metadata\56\56244217b50b12f43b66edecbee5fcd8
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\metadata\85\853ddd120846e684c8572c08b78972ba
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\metadata\\85\\853ddd120846e684c8572c08b78972ba"
+    projectPath: Library\metadata\85\853ddd120846e684c8572c08b78972ba
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Assembly-CSharp.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Assembly-CSharp.dll"
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Assembly-CSharp.pdb
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Assembly-CSharp.pdb"
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Assembly-CSharp-Editor.dll"
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Assembly-CSharp-Editor-firstpass.dll"
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\BuiltinAssemblies.stamp
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\BuiltinAssemblies.stamp"
+    projectPath: Library\ScriptAssemblies\BuiltinAssemblies.stamp
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Unity.Analytics.DataPrivacy.dll"
+    projectPath: Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Unity.CollabProxy.Editor.dll"
+    projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Unity.PackageManagerUI.Editor.dll"
+    projectPath: Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Unity.TextMeshPro.dll"
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\ScriptAssemblies\\Unity.TextMeshPro.Editor.dll"
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\shadercompiler-UnityShaderCompiler.exe0.log
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\shadercompiler-UnityShaderCompiler.exe0.log"
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\StateCache\Hierarchy\b343a2-mainStage.json
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\StateCache\\Hierarchy\\b343a2-mainStage.json"
+    projectPath: Library\StateCache\Hierarchy\b343a2-mainStage.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Library\StateCache\SceneView\d43e95-mainStage.json
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Library\\StateCache\\SceneView\\d43e95-mainStage.json"
+    projectPath: Library\StateCache\SceneView\d43e95-mainStage.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\ProjectSettings\QualitySettings.asset
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\ProjectSettings\\QualitySettings.asset"
+    projectPath: ProjectSettings\QualitySettings.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\ProjectSettings\UnityConnectSettings.asset
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\ProjectSettings\\UnityConnectSettings.asset"
+    projectPath: ProjectSettings\UnityConnectSettings.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: NWTL_LIAI\Temp\__Backupscenes\0.backup
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\__Backupscenes\\0.backup"
+    projectPath: Temp\__Backupscenes\0.backup
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\ProcessJobs\e9a6970f79cd12d8b075e7d72f1b07cb.bakert
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\ProcessJobs\\e9a6970f79cd12d8b075e7d72f1b07cb.bakert"
+    projectPath: Temp\ProcessJobs\e9a6970f79cd12d8b075e7d72f1b07cb.bakert
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityLockfile
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityLockfile"
+    projectPath: Temp\UnityLockfile
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-09dad50b4f532f94091cb3634686b840
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-09dad50b4f532f94091cb3634686b840"
+    projectPath: Temp\UnityTempFile-09dad50b4f532f94091cb3634686b840
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-113a57093a86dc34c9ac45288cbf6477
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-113a57093a86dc34c9ac45288cbf6477"
+    projectPath: Temp\UnityTempFile-113a57093a86dc34c9ac45288cbf6477
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-1b3ac4efb67d10d4b9d5fbfc57a1b097
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-1b3ac4efb67d10d4b9d5fbfc57a1b097"
+    projectPath: Temp\UnityTempFile-1b3ac4efb67d10d4b9d5fbfc57a1b097
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-1e786f35859b94549b61c42c7b36fc81
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-1e786f35859b94549b61c42c7b36fc81"
+    projectPath: Temp\UnityTempFile-1e786f35859b94549b61c42c7b36fc81
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-2156b34231e6e2b48bfa0bf88a4e95c1
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-2156b34231e6e2b48bfa0bf88a4e95c1"
+    projectPath: Temp\UnityTempFile-2156b34231e6e2b48bfa0bf88a4e95c1
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-219ed83996465d7409e4cc7619774b4c
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-219ed83996465d7409e4cc7619774b4c"
+    projectPath: Temp\UnityTempFile-219ed83996465d7409e4cc7619774b4c
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-2eb4a1fd43366f24fae2484c827d9747
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-2eb4a1fd43366f24fae2484c827d9747"
+    projectPath: Temp\UnityTempFile-2eb4a1fd43366f24fae2484c827d9747
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-2f86d35934f30a2469383f71965e1c3b
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-2f86d35934f30a2469383f71965e1c3b"
+    projectPath: Temp\UnityTempFile-2f86d35934f30a2469383f71965e1c3b
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-310df2b9ab76f6d498c395ee5de3ebef
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-310df2b9ab76f6d498c395ee5de3ebef"
+    projectPath: Temp\UnityTempFile-310df2b9ab76f6d498c395ee5de3ebef
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-39dcf81be7eadb043bc65dc7fbb72916
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-39dcf81be7eadb043bc65dc7fbb72916"
+    projectPath: Temp\UnityTempFile-39dcf81be7eadb043bc65dc7fbb72916
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-3ca58b36cb4be49429623b4774600cd3
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-3ca58b36cb4be49429623b4774600cd3"
+    projectPath: Temp\UnityTempFile-3ca58b36cb4be49429623b4774600cd3
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-47b395d2e4fab894dbe67e49f3e4a088
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-47b395d2e4fab894dbe67e49f3e4a088"
+    projectPath: Temp\UnityTempFile-47b395d2e4fab894dbe67e49f3e4a088
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-4a95e4dcaa4bb5e40b04238f2049c270
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-4a95e4dcaa4bb5e40b04238f2049c270"
+    projectPath: Temp\UnityTempFile-4a95e4dcaa4bb5e40b04238f2049c270
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-55d0564d5709b964299ae80427034869
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-55d0564d5709b964299ae80427034869"
+    projectPath: Temp\UnityTempFile-55d0564d5709b964299ae80427034869
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-733f693a1dfb3c14299b8613bd84d0cd
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-733f693a1dfb3c14299b8613bd84d0cd"
+    projectPath: Temp\UnityTempFile-733f693a1dfb3c14299b8613bd84d0cd
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-7382caaa9a7677741bfc53bf87b82137
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-7382caaa9a7677741bfc53bf87b82137"
+    projectPath: Temp\UnityTempFile-7382caaa9a7677741bfc53bf87b82137
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-90240c6d4d28b8d49bf0fa77ed7341cb
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-90240c6d4d28b8d49bf0fa77ed7341cb"
+    projectPath: Temp\UnityTempFile-90240c6d4d28b8d49bf0fa77ed7341cb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-96b1ef09fec7dc64d9e4b57cb98ce8eb
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-96b1ef09fec7dc64d9e4b57cb98ce8eb"
+    projectPath: Temp\UnityTempFile-96b1ef09fec7dc64d9e4b57cb98ce8eb
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-9fc030a727ed1cc498164a925a77693f
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-9fc030a727ed1cc498164a925a77693f"
+    projectPath: Temp\UnityTempFile-9fc030a727ed1cc498164a925a77693f
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-ab38190e13141ae4f976670c1b3d3201
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-ab38190e13141ae4f976670c1b3d3201"
+    projectPath: Temp\UnityTempFile-ab38190e13141ae4f976670c1b3d3201
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-c432efe47ddef7e42af57252de4dec71
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-c432efe47ddef7e42af57252de4dec71"
+    projectPath: Temp\UnityTempFile-c432efe47ddef7e42af57252de4dec71
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-c4cecfc163e2909458c005b208f3dca6
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-c4cecfc163e2909458c005b208f3dca6"
+    projectPath: Temp\UnityTempFile-c4cecfc163e2909458c005b208f3dca6
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-c5648ba8574ad204ca55866988ae4ee3
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-c5648ba8574ad204ca55866988ae4ee3"
+    projectPath: Temp\UnityTempFile-c5648ba8574ad204ca55866988ae4ee3
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-d23784a08908e0a4c8ce372a4799c836
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-d23784a08908e0a4c8ce372a4799c836"
+    projectPath: Temp\UnityTempFile-d23784a08908e0a4c8ce372a4799c836
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-e6fcff3ed39aaa4459476f6864304c22
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-e6fcff3ed39aaa4459476f6864304c22"
+    projectPath: Temp\UnityTempFile-e6fcff3ed39aaa4459476f6864304c22
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-efea1f05bd6dfca42b59f40d2747d297
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-efea1f05bd6dfca42b59f40d2747d297"
+    projectPath: Temp\UnityTempFile-efea1f05bd6dfca42b59f40d2747d297
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-f8be5914820083840aeecee4b5e2f4d7
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-f8be5914820083840aeecee4b5e2f4d7"
+    projectPath: Temp\UnityTempFile-f8be5914820083840aeecee4b5e2f4d7
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: NWTL_LIAI\Temp\UnityTempFile-f8e45b0a7d51dc54ba425fd555c4a895
+    fullPath: "C:\\Users\\Francisco Cola\xE7o\\Documents\\GitHub\\ILIA\\NWTL_LIAI\\Temp\\UnityTempFile-f8e45b0a7d51dc54ba425fd555c4a895"
+    projectPath: Temp\UnityTempFile-f8e45b0a7d51dc54ba425fd555c4a895
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1

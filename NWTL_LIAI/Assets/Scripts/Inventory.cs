@@ -28,15 +28,10 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I)){
-            inventoryEnabled = !inventoryEnabled;
-            Enable(inventoryEnabled);
 
-        }
     }
 
     public void Enable(bool on){
         inventory.SetActive(on);
-        Debug.Log("TESTE1 :" + on);
     }
 }
