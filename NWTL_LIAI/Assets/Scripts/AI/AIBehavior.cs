@@ -22,8 +22,10 @@ public class AIBehavior : MonoBehaviour{
     void Update()
     {
         FindPlayer();
-        IsDetected();
-        //ChasePlayer();
+        if (IsDetected()){
+            ChasePlayer();
+        }
+        
     }
 
     public void FindPlayer(){
@@ -42,7 +44,9 @@ public class AIBehavior : MonoBehaviour{
     public bool IsDetected(){
         DetectionStats stats = GetComponent<DetectionStats>();
         float distance = (playerLoc - GetComponent<Transform>().position).magnitude;
-        
+       
+       
+       
         if (distance < stats.FireRange){
             if (playerIsFiring) return true;
 
