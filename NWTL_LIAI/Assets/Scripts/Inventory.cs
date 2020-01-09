@@ -16,26 +16,27 @@ public class Inventory : MonoBehaviour
 
     void start()
     {
+        Enable(false);
         allSlots = 40;
         slot = new GameObject[allSlots];
 
         for (int i = 0; i < allSlots; i++)
         {
             slot[i] = slotHolder.transform.GetChild(i).gameObject;
-        }
+        }       
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if(Input.GetKeyDown(KeyCode.I)){
             inventoryEnabled = !inventoryEnabled;
+            Enable(inventoryEnabled);
 
-
-        if(inventoryEnabled == true)
-        {
-            inventory.SetActive(true);
-        } else {
-            inventory.SetActive(false);
         }
+    }
+
+    public void Enable(bool on){
+        inventory.SetActive(on);
+        Debug.Log("TESTE1 :" + on);
     }
 }

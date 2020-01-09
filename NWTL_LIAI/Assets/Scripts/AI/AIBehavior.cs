@@ -42,7 +42,6 @@ public class AIBehavior : MonoBehaviour{
     public bool IsDetected(){
         DetectionStats stats = GetComponent<DetectionStats>();
         float distance = (playerLoc - GetComponent<Transform>().position).magnitude;
-        Debug.Log(distance);
         
         if (distance < stats.FireRange){
             if (playerIsFiring) return true;
