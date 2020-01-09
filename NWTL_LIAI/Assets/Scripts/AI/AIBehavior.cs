@@ -6,14 +6,22 @@ public class AIBehavior : MonoBehaviour{
 
     public NavMeshAgent Agent;
 //Black Board
-    //Player vars
+    
+    //Player Stats
     Vector3 playerLoc;
-    bool playerIsFiring;
-    bool playerIsRunning;
+    bool playerIsFiring = false;
+    bool playerIsRunning = false;
+    bool playerIsMoving = false;
 
-    //Base vars
+    
+    //Base Stats
     Vector3 baseLoc;
-    bool baseIsActive;
+    bool baseIsActive = false;
+
+    
+    //Target Stats
+    bool IsInRange = false;
+    Vector3 Target;
 
 
 //Behavior
@@ -23,18 +31,31 @@ public class AIBehavior : MonoBehaviour{
     {
         FindPlayer();
         if (IsDetected()){
+            Target = playerLoc;
             ChasePlayer();
+
+            //Chenking atack
+            if (IsInRange){
+                attack();
+            }
+            
         }
         
     }
 
     public void FindPlayer(){
+        //player Refrence
         PlayerMovement player = FindObjectOfType<PlayerMovement>();
         
-        
-        playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
+        //Updating Player Status
+        playerIsMoving = playerLoc == FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
         playerIsFiring = player.GetComponentInChildren<WeaponSwitching>().GetActualGun().IsFiring;
         playerIsRunning = player.IsRunning;
+
+        //updating player Location
+        playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
+        
+        
     }
 
     public void FindActiveBase(){
@@ -43,10 +64,14 @@ public class AIBehavior : MonoBehaviour{
 
     public bool IsDetected(){
         DetectionStats stats = GetComponent<DetectionStats>();
+        
+        //checking Player Distance
         float distance = (playerLoc - GetComponent<Transform>().position).magnitude;
        
+        //Checking if player is in range
+        IsInRange = GetEnemieParentScript().attackRange > distance;
        
-       
+        //Checking Player Detection
         if (distance < stats.FireRange){
             if (playerIsFiring) return true;
 
@@ -58,9 +83,10 @@ public class AIBehavior : MonoBehaviour{
         }
         return false;
     }
+    
 
     public void ChasePlayer(){
-        Agent.SetDestination(playerLoc);
+        Agent.SetDestination(Target);
     }
 
     public void attack(){

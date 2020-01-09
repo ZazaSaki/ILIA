@@ -2866,6 +2866,7 @@ GameObject:
   - component: {fileID: 666477158}
   - component: {fileID: 666477157}
   - component: {fileID: 666477156}
+  - component: {fileID: 666477159}
   m_Layer: 0
   m_Name: AI_Tester
   m_TagString: Untagged
@@ -3010,6 +3011,19 @@ MonoBehaviour:
   RunRange: 20
   FireRange: 50
   WalckRange: 10
+--- !u!114 &666477159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666477150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123a824fe437f534f93aba3670c30cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 3
 --- !u!1 &678600450
 GameObject:
   m_ObjectHideFlags: 0
