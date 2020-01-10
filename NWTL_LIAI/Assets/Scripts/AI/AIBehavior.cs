@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class AIBehavior : MonoBehaviour{   
 
     //Debug var
-    public float DebugDistance;
+    public float TargetDistance;
 
 
     //Public var
@@ -93,7 +93,8 @@ public class AIBehavior : MonoBehaviour{
         bool ret = false;
 
         BaseParent[] baseList = FindObjectsOfType<BaseParent>();
-
+        
+        //if there are no bases
         if (baseList.Length == 0){
             return false;
         }
@@ -109,7 +110,8 @@ public class AIBehavior : MonoBehaviour{
                 ret = true;
                 
                 //setting base as a target
-                Target = item.GetComponent<Transform>().position;
+                Target = ((TargetDistance < distance) && IsPlayerDetected()) ? Target : item.GetComponent<Transform>().position;
+                TargetDistance = ((TargetDistance < distance) && IsPlayerDetected()) ? TargetDistance : distance;
             }
             
         }
@@ -120,7 +122,7 @@ public class AIBehavior : MonoBehaviour{
         //checking Player Distance
         float distance = (Target - GetComponent<Transform>().position).magnitude;
 
-        DebugDistance = distance;
+        TargetDistance = distance;
 
         //Checking if player is in range
         IsInRange = GetEnemieParentScript().attackRange > distance;
