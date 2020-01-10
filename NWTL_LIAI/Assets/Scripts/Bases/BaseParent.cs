@@ -8,7 +8,7 @@ public class BaseParent : MonoBehaviour{
     public string id;
     public float health;
     public float r;    
-    private bool IsActive = false;
+    public bool IsActive = false;
 
     public Door door;
 
