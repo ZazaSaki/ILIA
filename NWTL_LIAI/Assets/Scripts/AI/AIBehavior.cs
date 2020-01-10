@@ -39,9 +39,13 @@ public class AIBehavior : MonoBehaviour{
     void Update()
     {
         FindPlayer();
+        
         if (FindActiveBase()){
             ChaseTarget();
-        
+            CheckTargeDistance();
+            if (IsInRange){
+                attack();
+            }
         
         }else if (IsPlayerDetected()){
             
