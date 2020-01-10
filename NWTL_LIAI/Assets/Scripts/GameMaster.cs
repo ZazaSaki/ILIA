@@ -1,9 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class GameMaster : MonoBehaviour
-{   
+public class GameMaster : MonoBehaviour{
+    public NavMeshSurface nav;
+    public GameObject AI_Tester;   
     public Hashtable list = new Hashtable();
     string[] BasePath = {"base1", "base2", "base3"};
     public Transform player;
@@ -12,6 +14,9 @@ public class GameMaster : MonoBehaviour
     void Start()
     {
         
+
+
+
         //inicializating base list
         foreach (BaseParent item in FindObjectsOfType(typeof(BaseParent)))
         {   
@@ -47,6 +52,27 @@ public class GameMaster : MonoBehaviour
                 break;
         }
 
+    }
+
+    private void spawn(Vector3 spawnLoc){
+        
+        Instantiate(AI_Tester, new Vector3(3, 3 ,3),  new Quaternion());
+        
+        spawnLoc = nav.navMeshData.sourceBounds.ClosestPoint(spawnLoc);
+    }
+
+    public void spawnByBase(Vector3 BaseLoc, float BaseRay){
+        System.Random rand = new System.Random();
+        
+        
+        float r = (float)rand.NextDouble();
+        r = r * 10f + BaseRay; 
+
+        float x = rand.NextDouble() > 0.5 ? ((float)rand.NextDouble() * r) : ((float)rand.NextDouble() * r) * -1;
+
+        float y = rand.NextDouble() > 0.5 ? (float)Math.Sqrt((r*r - x*x))  : (float)Math.Sqrt((r*r - x*x)) * -1;
+
+        spawn(new Vector3(x, BaseLoc.y , y));
     }
 
     private BaseParent findBase(string id){
