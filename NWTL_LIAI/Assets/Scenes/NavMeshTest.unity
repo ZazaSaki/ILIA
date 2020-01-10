@@ -2981,7 +2981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5396840636c38499d9bacf17c32159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugDistance: 0
   Agent: {fileID: 666477151}
+  SecureDistance: 4
+  MealeDamage: 0
 --- !u!114 &666477157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3023,7 +3026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123a824fe437f534f93aba3670c30cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 3
+  attackRange: 10
 --- !u!1 &678600450
 GameObject:
   m_ObjectHideFlags: 0
