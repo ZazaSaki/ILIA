@@ -112,11 +112,9 @@ public class AIBehavior : MonoBehaviour{
         return ret;
     }
 
-    public bool IsPlayerDetected(){
-        DetectionStats stats = GetComponent<DetectionStats>();
-        
+    public float CheckTargeDistance(){
         //checking Player Distance
-        float distance = (playerLoc - GetComponent<Transform>().position).magnitude;
+        float distance = (Target - GetComponent<Transform>().position).magnitude;
 
         DebugDistance = distance;
 
@@ -124,7 +122,16 @@ public class AIBehavior : MonoBehaviour{
         IsInRange = GetEnemieParentScript().attackRange > distance;
         
         //Calculate if player is close enough to do a sucessfull attack
-        IsInSecureRange = (MealeDamage ? true : (GetEnemieParentScript().attackRange - distanceToSecureAttack > distance));
+        IsInSecureRange = (MealeDamage || (playerLoc != Target) ? true : (GetEnemieParentScript().attackRange - distanceToSecureAttack > distance));
+    
+        return distance;
+    }
+
+    public bool IsPlayerDetected(){
+        DetectionStats stats = GetComponent<DetectionStats>();
+        
+        //checking Player Distance
+        float distance = CheckTargeDistance();
        
         //Checking Player Detection
         if (distance < stats.FireRange){
