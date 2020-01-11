@@ -2,6 +2,9 @@
 using UnityEngine.AI;
 
 public class SpawnManager : MonoBehaviour{
+    
+    private bool Spawning;
+    private int NumOfSpawns;
     private int SpawnLevel;
     private EnemieParentScript.Type SpawnType;
     public GameObject[] List;
@@ -16,7 +19,7 @@ public class SpawnManager : MonoBehaviour{
                 Debug.Log("There Is A Non Enemie Game Object In The Spawn List");
         }
 
-        
+
     }
     
     
@@ -64,7 +67,14 @@ public class SpawnManager : MonoBehaviour{
         
     }
 
-    public void spawnByBase(Vector3 BaseLoc, float BaseRay){
+    public void spawnByBase(Vector3 BaseLoc, float BaseRay, int maxEnemiesAtOnce, int EnemiesToSpawn){
+        
+        if (!Spawning)
+        {
+            Spawning = true;
+            NumOfSpawns = EnemiesToSpawn;
+        }
+        
         System.Random rand = new System.Random();
         
         
@@ -75,9 +85,20 @@ public class SpawnManager : MonoBehaviour{
 
         float y = rand.NextDouble() > 0.5 ? (float)System.Math.Sqrt((r*r - x*x))  : (float)System.Math.Sqrt((r*r - x*x)) * -1;
 
-        spawn(new Vector3(x, BaseLoc.y , y));
+        if (FindObjectsOfType<EnemieParentScript>().Length < maxEnemiesAtOnce){
+           spawn(new Vector3(x, BaseLoc.y , y)); 
+           NumOfSpawns--;
 
+           if (NumOfSpawns < 1)
+           {
+               StopSpawning();
+           }
+        }
+    }
 
+    public void StopSpawning(){
+        CancelInvoke();
+        Spawning = false;
     }
     
 
