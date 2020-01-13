@@ -28,9 +28,9 @@ public class GameMaster : MonoBehaviour{
         Debug.Log(id);
         this.id = id;
         rate = 5;
-        int i = GetBaseManager().getIncrementedList(id)[0];
+        
 
-        switch (GetBaseManager().getList(id)[i])
+        switch (GetBaseManager().getIncrementedSeq(id))
         {
             case 0: GetBaseManager().goNextBase(id);
                 break;
@@ -38,7 +38,8 @@ public class GameMaster : MonoBehaviour{
             case 1: InvokeRepeating("SpawnRepeat", rate, rate);
                 break;
             
-            default: Debug.Log("non defined option");
+            default: GetBaseManager().findBase(id).Reset();
+                Debug.Log("non defined option");
                 break;
         }
 

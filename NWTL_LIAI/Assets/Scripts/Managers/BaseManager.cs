@@ -72,6 +72,7 @@ public class BaseManager : MonoBehaviour
     }
 
     public void goNextBase(string id){
+        findBase(id).Reset();
         BaseParent b = findNextBase(id);
         
         //getting the transform of the next base
@@ -87,8 +88,14 @@ public class BaseManager : MonoBehaviour
         return (int[])list[id];
     }
 
-    public int[] getIncrementedList(string id){
-        ((int[])list[id])[0]++;
-        return (int[])list[id];
+    public int getIncrementedSeq(string id){
+        int[] seq = (int[])list[id];
+        int i = ++seq[0];
+         
+         if (i < seq.Length){
+             return seq[i];
+         }else{
+             return 99;
+         }
     }
 }

@@ -17,7 +17,7 @@ public class BaseParent : MonoBehaviour{
         if (!IsActive)
         {
             IsActive = true;
-            Debug.Log("Base " + id.ToString() + " recieved computer action");
+            Debug.Log("Base " + id + " recieved computer action");
             Sequence();
         }
         

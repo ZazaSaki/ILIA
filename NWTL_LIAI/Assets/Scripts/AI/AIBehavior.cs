@@ -40,6 +40,8 @@ public class AIBehavior : MonoBehaviour{
     {
         FindPlayer();
         
+        Target = playerLoc;
+        
         if (FindActiveBase()){
             ChaseTarget();
             CheckTargeDistance();
@@ -47,7 +49,9 @@ public class AIBehavior : MonoBehaviour{
                 attack();
             }
         
-        }else if (IsPlayerDetected()){
+        }
+        
+        if (IsPlayerDetected() && setTarget(playerLoc)){
             
             ChaseTarget();
 
@@ -82,14 +86,9 @@ public class AIBehavior : MonoBehaviour{
 
         //updating player Location
         playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
-        
-        //setting player as a target
-        Target = playerLoc;
     }
 
     public bool FindActiveBase(){
-        float distance = 0;
-        float closest = 0;
         bool ret = false;
 
         BaseParent[] baseList = FindObjectsOfType<BaseParent>();
@@ -100,18 +99,15 @@ public class AIBehavior : MonoBehaviour{
         }
 
         //closest : first value
-        closest = (baseList[0].GetComponent<Transform>().position - GetTransform().position).magnitude;
-
         foreach (BaseParent item in baseList){
-            distance = (item.GetComponent<Transform>().position - GetTransform().position).magnitude;
             
-            
-            if(closest > distance && item.IsActive){
-                ret = true;
+            if(item.IsActive){
+                if (setTarget(item.GetComponent<Transform>().position))
+                {
+                    ret = true;
+                }
                 
-                //setting base as a target
-                Target = ((TargetDistance < distance) && IsPlayerDetected()) ? Target : item.GetComponent<Transform>().position;
-                TargetDistance = ((TargetDistance < distance) && IsPlayerDetected()) ? TargetDistance : distance;
+                Debug.Log("is Base active : " + gameObject);
             }
             
         }
@@ -131,6 +127,18 @@ public class AIBehavior : MonoBehaviour{
         IsInSecureRange = (MealeDamage || (playerLoc != Target) ? true : (GetEnemieParentScript().attackRange - distanceToSecureAttack > distance));
     
         return distance;
+    }
+
+    public bool setTarget(Vector3 Location){
+        float distance = (Location - GetTransform().position).magnitude;
+        
+        if ((TargetDistance >= distance) || !IsPlayerDetected()){
+            Target = Location;
+            TargetDistance = distance;
+            return true;
+        }
+
+        return false;   
     }
 
     public bool IsPlayerDetected(){
