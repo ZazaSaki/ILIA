@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour{
     private EnemieParentScript.Type SpawnType;
     public GameObject[] List;
     public NavMeshSurface nav;
-    GameObject ObjectToSpawn;
+    public GameObject ObjectToSpawn;
 
     // Start is called before the first frame update
     private void Start() {
@@ -60,7 +60,7 @@ public class SpawnManager : MonoBehaviour{
         }
     }
     
-    private void spawn(Vector3 spawnLoc){
+    public void spawn(Vector3 spawnLoc){
         spawnLoc = nav.navMeshData.sourceBounds.ClosestPoint(spawnLoc);
         Instantiate(ObjectToSpawn, spawnLoc,  new Quaternion());
         
@@ -69,15 +69,18 @@ public class SpawnManager : MonoBehaviour{
 
     public void spawnByBase(Vector3 BaseLoc, float BaseRay, int maxEnemiesAtOnce, int EnemiesToSpawn){
         
+        //Start Counting the spawns
         if (!Spawning)
         {
             Spawning = true;
             NumOfSpawns = EnemiesToSpawn;
         }
         
+        //Random object to generate Random numbers (double)
         System.Random rand = new System.Random();
         
         
+        //Generate random x and y, with a r distance from the base
         float r = (float)rand.NextDouble();
         r = r * 10f + BaseRay; 
 
@@ -85,10 +88,14 @@ public class SpawnManager : MonoBehaviour{
 
         float y = rand.NextDouble() > 0.5 ? (float)System.Math.Sqrt((r*r - x*x))  : (float)System.Math.Sqrt((r*r - x*x)) * -1;
 
+        
+        //checking the number of enemies
         if (FindObjectsOfType<EnemieParentScript>().Length < maxEnemiesAtOnce){
+           
            spawn(new Vector3(x, BaseLoc.y , y)); 
            NumOfSpawns--;
 
+           //chencking the number of spawned enemies
            if (NumOfSpawns < 1)
            {
                StopSpawning();
@@ -97,7 +104,13 @@ public class SpawnManager : MonoBehaviour{
     }
 
     public void StopSpawning(){
-        CancelInvoke();
+        //Stop Calling the Spawn Function
+        GetComponent<GameMaster>().CancelInvoke();
+        
+        //reset Base to the next Event
+        GetComponent<GameMaster>().resetBase();
+        
+        //reset The Spanw Counter
         Spawning = false;
     }
     

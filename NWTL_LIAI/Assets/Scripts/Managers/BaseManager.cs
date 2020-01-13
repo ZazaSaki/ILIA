@@ -5,7 +5,7 @@ using UnityEngine;
 public class BaseManager : MonoBehaviour
 {   
     public Hashtable list = new Hashtable();
-    string[] BasePath = {"base1", "base2", "base3"};
+    public string[] BasePath = {"base1", "base2", "base3"};
     public Transform player;
     
     
@@ -19,7 +19,7 @@ public class BaseManager : MonoBehaviour
             //CHECKING REPEATED BASES
             if (!list.ContainsKey(item.id))
             {   
-                list.Add(item.id, new int[2]{0,1});
+                list.Add(item.id, new int[3]{0,1,0});
 
                 Debug.Log(item.id);
             }else{
@@ -73,13 +73,9 @@ public class BaseManager : MonoBehaviour
 
     public void goNextBase(string id){
         BaseParent b = findNextBase(id);
-        Debug.Log("This base: " + id);
-        Debug.Log("Next Base: " + b.id);
-        Debug.Log("Next Base Transform: " + b.GetComponent<Transform>());
+        
         //getting the transform of the next base
         Transform NextBaseTransform =(b == null) ? null : b.GetComponent<Transform>();
-        
-        Debug.Log("Checking Last: " + NextBaseTransform);
         
         //setting the compass
 
@@ -88,6 +84,11 @@ public class BaseManager : MonoBehaviour
     }
 
     public int[] getList(string id){
+        return (int[])list[id];
+    }
+
+    public int[] getIncrementedList(string id){
+        ((int[])list[id])[0]++;
         return (int[])list[id];
     }
 }

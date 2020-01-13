@@ -23,7 +23,7 @@ public class BaseParent : MonoBehaviour{
         
     }
 
-    public void ResetComputer(){
+    public void Reset(){
         IsActive = false;
     }
 
