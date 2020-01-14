@@ -49,8 +49,8 @@ public class GameMaster : MonoBehaviour{
 
     public void SpawnRepeat(){
         Vector3 loc = GetBaseManager().findBase(id).GetComponent<Transform>().position;
-        
-        GetSpawnManager().spawnByBase(loc, 20, 3, 6);
+        Debug.Log(loc);
+        GetSpawnManager().spawnByBase(loc, 30, 3, 6);
     }
 
     private SpawnManager GetSpawnManager(){

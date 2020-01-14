@@ -103,14 +103,17 @@ public class SpawnManager : MonoBehaviour{
     //Generating the y    
     //y = sqrt(r^2 - (x-a)^2) + b; {a,b} = Center 
         //calculating the square root part
-        float Sqrt = (float)System.Math.Sqrt((r*r - (x-BaseLoc.x)*(x-BaseLoc.x)));
+        float Sqrt = (float)System.Math.Sqrt(r*r - ((x-BaseLoc.x)*(x-BaseLoc.x)));
         //Adding b
-        float y = rand.NextDouble() > 0.5 ? BaseLoc.y + Sqrt : BaseLoc.y - Sqrt;
-
+        float y = rand.NextDouble() > 0.5 ? BaseLoc.z + Sqrt : BaseLoc.z - Sqrt;
+        
+        Debug.Log("y: " + y + "; r: " + r + "; x: " + x + "; a: " + BaseLoc.x);
         
         //checking the number of enemies
         if (FindObjectsOfType<EnemieParentScript>().Length < maxEnemiesAtOnce){
            
+           Debug.Log("vector : " + new Vector3(BaseLoc.x - x, BaseLoc.y , BaseLoc.z - y));
+
            spawn(new Vector3(BaseLoc.x - x, BaseLoc.y , BaseLoc.z - y)); 
            NumOfSpawns--;
 
