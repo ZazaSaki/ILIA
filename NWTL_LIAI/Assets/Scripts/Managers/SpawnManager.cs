@@ -11,8 +11,11 @@ public class SpawnManager : MonoBehaviour{
     public NavMeshSurface nav;
     public GameObject ObjectToSpawn;
 
+    public Transform DebugPoint;
     // Start is called before the first frame update
     private void Start() {
+        
+        
         foreach (GameObject item in List)
         {
             if(item.GetComponent<EnemieParentScript>()==null)
@@ -21,6 +24,8 @@ public class SpawnManager : MonoBehaviour{
 
 
     }
+    
+    
     
     
     public void CalculateEnemie(float Level1Prob, float Level2Prob, float TypeFastprb, float TypeBalancedProb){
@@ -60,6 +65,8 @@ public class SpawnManager : MonoBehaviour{
         }
     }
     
+
+    //Spawn By Position inside the nav mesh
     public void spawn(Vector3 spawnLoc){
         spawnLoc = nav.navMeshData.sourceBounds.ClosestPoint(spawnLoc);
         Instantiate(ObjectToSpawn, spawnLoc,  new Quaternion());
@@ -68,7 +75,7 @@ public class SpawnManager : MonoBehaviour{
     }
 
     public void spawnByBase(Vector3 BaseLoc, float BaseRay, int maxEnemiesAtOnce, int EnemiesToSpawn){
-        
+        float SpawnRange = 20;
         //Start Counting the spawns
         if (!Spawning)
         {
@@ -80,19 +87,31 @@ public class SpawnManager : MonoBehaviour{
         System.Random rand = new System.Random();
         
         
-        //Generate random x and y, with a r distance from the base
+//Generate random x and y, with a r distance from the base
+    //Generating the r
+        //random num between:  0 and 1
         float r = (float)rand.NextDouble();
-        r = r * 10f + BaseRay; 
+        //Getting a r bettween : BaseRay and (BaseRay + SpawnRange)
+        r = r*(SpawnRange) + BaseRay;
 
-        float x = rand.NextDouble() > 0.5 ? ((float)rand.NextDouble() * r) : ((float)rand.NextDouble() * r) * -1;
+    //Generating the x
+        //generating random x between : 0 and (SpawnRange + BaseRay)
+        float x = (SpawnRange + BaseRay) * (float)rand.NextDouble();
+        //adding x to the center 
+        x = rand.NextDouble() > 0.5 ? (BaseLoc.x - r) : (BaseLoc.x + r);
 
-        float y = rand.NextDouble() > 0.5 ? (float)System.Math.Sqrt((r*r - x*x))  : (float)System.Math.Sqrt((r*r - x*x)) * -1;
+    //Generating the y    
+    //y = sqrt(r^2 - (x-a)^2) + b; {a,b} = Center 
+        //calculating the square root part
+        float Sqrt = (float)System.Math.Sqrt((r*r - (x-BaseLoc.x)*(x-BaseLoc.x)));
+        //Adding b
+        float y = rand.NextDouble() > 0.5 ? BaseLoc.y + Sqrt : BaseLoc.y - Sqrt;
 
         
         //checking the number of enemies
         if (FindObjectsOfType<EnemieParentScript>().Length < maxEnemiesAtOnce){
            
-           spawn(new Vector3(x, BaseLoc.y , y)); 
+           spawn(new Vector3(BaseLoc.x - x, BaseLoc.y , BaseLoc.z - y)); 
            NumOfSpawns--;
 
            //chencking the number of spawned enemies
