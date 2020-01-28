@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 
 public class Gun : MonoBehaviour{
+    //Mesh
+    public int[] Mesh; 
+
+
+    //Gun Stats
     public float damage = 10f;
     public float impactForce = 30f;
     public float range = 50f;

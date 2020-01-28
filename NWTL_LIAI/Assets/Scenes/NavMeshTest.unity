@@ -679,6 +679,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242497984}
   m_CullTransparentMesh: 0
+--- !u!1 &271286623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4867359690471727994, guid: c0cf5c6ef34bc404d95594e3b8590710,
+    type: 3}
+  m_PrefabInstance: {fileID: 4867359690044391716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &272782965
 GameObject:
   m_ObjectHideFlags: 0
@@ -5368,6 +5374,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 5321401703714724687, guid: 0e64bdfecba6ce84e81377a67c837028,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2135521890}
+    - target: {fileID: 8655943319963828772, guid: 0e64bdfecba6ce84e81377a67c837028,
+        type: 3}
+      propertyPath: ObjectToSpawn
+      value: 
+      objectReference: {fileID: 271286623}
+    - target: {fileID: 8655943319963828772, guid: 0e64bdfecba6ce84e81377a67c837028,
+        type: 3}
+      propertyPath: nav
+      value: 
+      objectReference: {fileID: 272782966}
+    - target: {fileID: 8655943319963828772, guid: 0e64bdfecba6ce84e81377a67c837028,
+        type: 3}
+      propertyPath: DebugPoint
+      value: 
+      objectReference: {fileID: 43559189}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e64bdfecba6ce84e81377a67c837028, type: 3}
 --- !u!1 &1218879057

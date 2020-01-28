@@ -7,6 +7,7 @@ public class WeaponSwitching : MonoBehaviour{
     
     public Transform GunList;
     private int actualGunId = 0;
+    
     // Update is called once per frame
     
     private void Start() {
@@ -43,18 +44,42 @@ public class WeaponSwitching : MonoBehaviour{
 
     public void selectWeapon(int gunID){
         int i = 0;
-        
+        int[] MeshList = null;
         //setting new weapon
         foreach (Transform weapon in GunList){
             if (i == gunID){
-                weapon.gameObject.SetActive(true);
+                //weapon.gameObject.SetActive(true);
                 actualGun = weapon;
-            }else
-                weapon.gameObject.SetActive(false);
+                MeshList =  weapon.GetComponent<Gun>().Mesh;
+                break;
 
-            i++;
-            
+            }else
+                //weapon.gameObject.SetActive(false);
+               i++;    
         }
+
+        i=0;
+         
+        foreach (Transform weapon in GunList){
+            
+            if (Contains(MeshList, i)){
+                weapon.gameObject.SetActive(true);
+            }else{
+                weapon.gameObject.SetActive(false);
+            }
+            i++;
+        }
+        
+    }
+
+    private bool Contains(int[] List, int i){
+        foreach (int item in List){
+            if (i == item)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Gun GetActualGun()
