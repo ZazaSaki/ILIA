@@ -101,12 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a123110c52a02c04aa711de0947851c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mesh: 
-  damage: 10
+  Mesh: 00000000
+  damage: 1000
   impactForce: 50
   range: 50
   fireRate: 3
-  ammo: 10
+  ammo: 60
   maxAmmo: 10
   IsFiring: 0
   fpsCam: {fileID: 0}

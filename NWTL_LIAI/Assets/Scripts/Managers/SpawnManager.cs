@@ -68,8 +68,8 @@ public class SpawnManager : MonoBehaviour{
 
     //Spawn By Position inside the nav mesh
     public void spawn(Vector3 spawnLoc){
-        spawnLoc = nav.navMeshData.sourceBounds.ClosestPoint(spawnLoc);
-        Instantiate(ObjectToSpawn, spawnLoc,  new Quaternion());
+        Vector3 newSpawnLoc = nav.navMeshData.sourceBounds.ClosestPoint(spawnLoc);
+        Instantiate(ObjectToSpawn, newSpawnLoc,  new Quaternion());
         
         
     }
@@ -96,9 +96,9 @@ public class SpawnManager : MonoBehaviour{
 
     //Generating the x
         //generating random x between : 0 and (SpawnRange + BaseRay)
-        float x = (SpawnRange + BaseRay) * (float)rand.NextDouble();
+        float x = r * (float)rand.NextDouble();
         //adding x to the center 
-        x = rand.NextDouble() > 0.5 ? (BaseLoc.x - r) : (BaseLoc.x + r);
+        x = rand.NextDouble() > 0.5 ? (BaseLoc.x - x) : (BaseLoc.x + x);
 
     //Generating the y    
     //y = sqrt(r^2 - (x-a)^2) + b; {a,b} = Center 
@@ -107,12 +107,21 @@ public class SpawnManager : MonoBehaviour{
         //Adding b
         float y = rand.NextDouble() > 0.5 ? BaseLoc.z + Sqrt : BaseLoc.z - Sqrt;
         
+        
+        /////////////////////////////////////////////////
+        Debug.Log( "Sqrt(" + r + "*" + r + "-" + "((" + x + "-" + BaseLoc.x + ")*(" + x + "-" + BaseLoc.x + "))) = " + System.Math.Sqrt(r*r - ((x-BaseLoc.x)*(x-BaseLoc.x))));
         Debug.Log("y: " + y + "; r: " + r + "; x: " + x + "; a: " + BaseLoc.x);
+            ////////////////////////////////
+
         
         //checking the number of enemies
         if (FindObjectsOfType<EnemieParentScript>().Length < maxEnemiesAtOnce){
            
+           ////////////////////////////
+           Debug.Log("vector Base z : " + BaseLoc.z);
+           Debug.Log("vector y : " + y);
            Debug.Log("vector : " + new Vector3(BaseLoc.x - x, BaseLoc.y , BaseLoc.z - y));
+            ///////////////////////////////////
 
            spawn(new Vector3(BaseLoc.x - x, BaseLoc.y , BaseLoc.z - y)); 
            NumOfSpawns--;
