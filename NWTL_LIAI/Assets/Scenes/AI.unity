@@ -326,6 +326,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4712917982331846813, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: Mesh.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712917982331846813, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: Mesh.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4936904520999884568, guid: 421acd2d0326f6d4ba992c788989d5ce,
         type: 3}
       propertyPath: maxhealth
@@ -336,6 +346,21 @@ PrefabInstance:
       propertyPath: compass
       value: 
       objectReference: {fileID: 1287395490}
+    - target: {fileID: 7460911030661156533, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: Mesh.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717425079091578419, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717425079091578419, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2df8b650e029fc4c90131d2a71bf57a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 421acd2d0326f6d4ba992c788989d5ce, type: 3}
 --- !u!114 &420485378 stripped
@@ -595,12 +620,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1081006045 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 714819511002824922, guid: 421acd2d0326f6d4ba992c788989d5ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 420485377}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1094183592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -675,31 +694,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09c7c3c69c477484a89e7876a9ff275c, type: 3}
---- !u!1 &1165986674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8717425079093778675, guid: 421acd2d0326f6d4ba992c788989d5ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 420485377}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1165986675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1165986674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a123110c52a02c04aa711de0947851c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  impactForce: 30
-  range: 50
-  fireRate: 50
-  ammo: 10
-  maxAmmo: 10
-  fpsCam: {fileID: 1081006045}
 --- !u!1001 &1287395489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -827,6 +821,21 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 420485378}
+    - target: {fileID: 7656196657101877716, guid: bf58ac66b6e116d4cab8747521657e11,
+        type: 3}
+      propertyPath: PlayerHealth
+      value: 
+      objectReference: {fileID: 420485378}
+    - target: {fileID: 7656196657101877716, guid: bf58ac66b6e116d4cab8747521657e11,
+        type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 505531833}
+    - target: {fileID: 7656196657101877716, guid: bf58ac66b6e116d4cab8747521657e11,
+        type: 3}
+      propertyPath: WeaponHolder
+      value: 
+      objectReference: {fileID: 326067951}
     - target: {fileID: 8302373300655622874, guid: bf58ac66b6e116d4cab8747521657e11,
         type: 3}
       propertyPath: player
