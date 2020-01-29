@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Computer : Tool{
-
-    public BaseParent baseParent; 
-    
-    
-    public override void Action(Transform Player)
-    {
-        Debug.Log("Computer is Active");
-        baseParent.ComputerActivated();
+public class AmmoItem : Tool
+{   
+    public int Ammo = 5;
+    public override void Action(Transform Player){
+        Player.GetComponent<AmmoProvisoryInventory>().PickUpAmmo(this);
+        if (Ammo == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update

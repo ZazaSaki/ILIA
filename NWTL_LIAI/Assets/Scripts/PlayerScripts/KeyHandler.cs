@@ -32,5 +32,9 @@ public class KeyHandler : MonoBehaviour{
         if (Input.GetButtonDown("Cancel")){
             Application.Quit();
         }
+
+        if (Input.GetButtonDown("Reload")){
+            gunList.GetActualGun().Reload();
+        }
     }
 }

@@ -67,4 +67,8 @@ public class Gun : MonoBehaviour{
         ammo--;
 
     }
+
+    public void Reload(){
+        GetComponentInParent<AmmoProvisoryInventory>().ReloadGun(this);
+    }
 }

@@ -14,7 +14,7 @@ public class GameMaster : MonoBehaviour{
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<PlayerMovement>().GetComponent<compassChanger>().PointTo(GetBaseManager().findBase("base1").GetComponent<Transform>());
+        //FindObjectOfType<PlayerMovement>().GetComponent<compassChanger>().PointTo(GetBaseManager().findBase("base1").GetComponent<Transform>());
     }
 
     // Update is called once per frame

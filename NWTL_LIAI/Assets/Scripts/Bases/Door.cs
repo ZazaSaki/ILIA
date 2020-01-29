@@ -10,7 +10,7 @@ public class Door : Tool
 
     public Animation anim;
 
-    public override void Action(){
+    public override void Action(Transform Player){
         if (!anim.isPlaying)
         {
             if (Opened)close();    

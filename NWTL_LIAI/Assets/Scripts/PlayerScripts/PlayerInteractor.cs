@@ -10,7 +10,7 @@ public class PlayerInteractor : MonoBehaviour
     private void Update() {
         
         if (Input.GetButtonDown("Interact") && interact != null){
-            interact.Action();
+            interact.Action(GetComponent<Transform>());
         }
     }
     public void setInteract(Tool item){
