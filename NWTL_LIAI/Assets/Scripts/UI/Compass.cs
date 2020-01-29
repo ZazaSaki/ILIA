@@ -3,7 +3,6 @@ using UnityEngine.UI;
 public class Compass : UI_Widget{
 
     private Vector3 north;
-    private Transform player;
     
     private Transform missionPlace;
     private Quaternion mission;//*/
@@ -12,11 +11,10 @@ public class Compass : UI_Widget{
     public RectTransform missionLayer;
     // Update is called once per frame
     
-    
-    private void Start() {
-        player = getUIManager().PlayerTransform;
+    public Transform player(){
+        return getUIManager().PlayerTransform;
     }
-    
+
     void Update()
     {
         updateNorth();
@@ -27,7 +25,7 @@ public class Compass : UI_Widget{
     }
 
     private void updateNorth(){
-        north.z = player.eulerAngles.y;
+        north.z = player().eulerAngles.y;
         northLayer.localEulerAngles = north;
 
     }
@@ -36,7 +34,7 @@ public class Compass : UI_Widget{
     
     private void updateMission(){
         //Director vector to quaternion
-        Vector3 vectorDirector = player.position - missionPlace.position;
+        Vector3 vectorDirector = player().position - missionPlace.position;
         mission = Quaternion.LookRotation(vectorDirector);
 
 
