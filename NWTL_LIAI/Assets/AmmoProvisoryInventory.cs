@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class AmmoProvisoryInventory : MonoBehaviour
 {
-    public int ammo;
-    public const int maxAmmo = 30;
+    public int Ammo;
+    public const int MaxAmmo = 30;
     
     private void Start() {
-        ammo = maxAmmo-6; 
+        Ammo = MaxAmmo-6; 
     }
     
-    public void ReloadGun(Gun g){
-        int missingAmmo = g.maxAmmo - g.ammo;
+    public void ReloadGun(WeaponSwitching g){
+        int missingAmmo = g.MaxAmmo - g.Ammo;
 
-        if (missingAmmo > this.ammo)
+        if (missingAmmo > this.Ammo)
         {
-            g.ammo += this.ammo;
-            this.ammo = 0;
+            g.Ammo += this.Ammo;
+            this.Ammo = 0;
         }else{
-            this.ammo -= missingAmmo;
-            g.ammo += missingAmmo;
+            this.Ammo -= missingAmmo;
+            g.Ammo += missingAmmo;
         }
     }
 
     public void PickUpAmmo(AmmoItem i){
-        if (i.Ammo+this.ammo > maxAmmo){
-            i.Ammo = maxAmmo - (i.Ammo + this.ammo);
-            this.ammo = maxAmmo;
+        if (i.Ammo+this.Ammo > MaxAmmo){
+            i.Ammo = MaxAmmo - (i.Ammo + this.Ammo);
+            this.Ammo = MaxAmmo;
         }else{
-            this.ammo +=i.Ammo;
+            this.Ammo +=i.Ammo;
             i.Ammo = 0;
         }
     }

@@ -10,15 +10,17 @@ public class Gun : MonoBehaviour{
     public float impactForce = 30f;
     public float range = 50f;
     public float fireRate = 50f;
-    public int ammo = 10;
-    public int maxAmmo = 10;
+    private WeaponSwitching WeaponHolder;
 
     private float nextTimeToFire = 0f;
     public bool IsFiring = false;
 
+    public int AmmoByShot;
+
     public Camera fpsCam;
     // Start is called before the first frame update
     void Start(){
+        WeaponHolder = GetComponentInParent<WeaponSwitching>();
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class Gun : MonoBehaviour{
     void Shoot(){
         RaycastHit hit;
         
-        if (ammo < 1)
+        if (WeaponHolder.Ammo < AmmoByShot)
         {
             return;
         }
@@ -64,11 +66,11 @@ public class Gun : MonoBehaviour{
         }
 
 
-        ammo--;
+        WeaponHolder.Ammo -= AmmoByShot;
 
     }
 
     public void Reload(){
-        GetComponentInParent<AmmoProvisoryInventory>().ReloadGun(this);
+        GetComponentInParent<AmmoProvisoryInventory>().ReloadGun(WeaponHolder);
     }
 }

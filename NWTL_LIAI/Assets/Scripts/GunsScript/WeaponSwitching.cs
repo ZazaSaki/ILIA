@@ -7,6 +7,10 @@ public class WeaponSwitching : MonoBehaviour{
     
     public Transform GunList;
     private int actualGunId = 0;
+
+    public int Ammo;
+    public int MaxAmmo;
+
     
     // Update is called once per frame
     

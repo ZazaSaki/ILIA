@@ -24,7 +24,7 @@ public class AmmoUI : UI_Widget
         {
             return 999;
         }
-        return weaponList.GetActualGun().ammo;
+        return weaponList.Ammo;
     }
 
     private int getMaxAmmo(){
@@ -32,6 +32,6 @@ public class AmmoUI : UI_Widget
         {
             return 999;
         }
-        return weaponList.GetActualGun().maxAmmo;
+        return weaponList.MaxAmmo;
     }
 }

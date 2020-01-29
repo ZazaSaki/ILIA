@@ -17,9 +17,8 @@ MonoBehaviour:
   impactForce: 100
   range: 40
   fireRate: 1
-  ammo: 5
-  maxAmmo: 5
   IsFiring: 0
+  AmmoByShot: 2
   fpsCam: {fileID: 0}
 --- !u!1 &5848885019186752805
 GameObject:
@@ -68,6 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunList: {fileID: 7612201444216513067}
+  Ammo: 0
+  MaxAmmo: 30
 --- !u!114 &5536862269364670698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,9 +86,8 @@ MonoBehaviour:
   impactForce: 100
   range: 100
   fireRate: 0.3
-  ammo: 7
-  maxAmmo: 7
   IsFiring: 0
+  AmmoByShot: 2
   fpsCam: {fileID: 0}
 --- !u!114 &4417555276570503214
 MonoBehaviour:
@@ -106,9 +106,8 @@ MonoBehaviour:
   impactForce: 50
   range: 50
   fireRate: 3
-  ammo: 60
-  maxAmmo: 10
   IsFiring: 0
+  AmmoByShot: 1
   fpsCam: {fileID: 0}
 --- !u!1001 &1612265645518842217
 PrefabInstance:

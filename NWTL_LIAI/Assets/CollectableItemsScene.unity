@@ -497,6 +497,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3512291757785041558, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: MaxAmmo
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5626677012928602421, guid: 421acd2d0326f6d4ba992c788989d5ce,
         type: 3}
       propertyPath: compass
@@ -799,7 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4df8cff36b1124e98504b855d76220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 0
+  Ammo: 0
 --- !u!1001 &82929713395409579
 PrefabInstance:
   m_ObjectHideFlags: 0
