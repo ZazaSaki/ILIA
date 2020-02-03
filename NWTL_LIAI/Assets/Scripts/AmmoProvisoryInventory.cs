@@ -3,17 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AmmoProvisoryInventory : MonoBehaviour
-{
+{   
+
+    //test_vars
+    public bool InfinitAmmo;
+    //*test_vars
+
+
     public int Ammo;
-    public const int MaxAmmo = 30;
+    public int MaxAmmo;
     
     private void Start() {
-        Ammo = MaxAmmo-6; 
+         
     }
     
     public void ReloadGun(WeaponSwitching g){
         int missingAmmo = g.MaxAmmo - g.Ammo;
 
+        //test_Code
+        if (InfinitAmmo){
+            g.Ammo += missingAmmo;
+            return;
+        }
+        //*test_Code
+        
         if (missingAmmo > this.Ammo)
         {
             g.Ammo += this.Ammo;
