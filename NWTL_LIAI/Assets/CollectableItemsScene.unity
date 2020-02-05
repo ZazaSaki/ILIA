@@ -230,7 +230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 23193bfa354f43b4bacfa7823a636814, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -507,7 +507,8 @@ PrefabInstance:
       propertyPath: compass
       value: 
       objectReference: {fileID: 903376850}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2117276967685038323, guid: 421acd2d0326f6d4ba992c788989d5ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 421acd2d0326f6d4ba992c788989d5ce, type: 3}
 --- !u!1 &1368781237
 GameObject:
@@ -768,12 +769,6 @@ PrefabInstance:
       objectReference: {fileID: 1652955287}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e64bdfecba6ce84e81377a67c837028, type: 3}
---- !u!1 &1992391127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 714819510436487867, guid: 421acd2d0326f6d4ba992c788989d5ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 1223239126}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1992391128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 714819510436487865, guid: 421acd2d0326f6d4ba992c788989d5ce,
@@ -786,25 +781,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1223239126}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992391127}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be1017899cfce624f8e9dd46e2cd1d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1992391135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992391127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e4df8cff36b1124e98504b855d76220, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ammo: 0
 --- !u!1001 &82929713395409579
 PrefabInstance:
   m_ObjectHideFlags: 0
