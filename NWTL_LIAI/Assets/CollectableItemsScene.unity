@@ -502,6 +502,11 @@ PrefabInstance:
       propertyPath: MaxAmmo
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4920115133494081907, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: lauchingForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5626677012928602421, guid: 421acd2d0326f6d4ba992c788989d5ce,
         type: 3}
       propertyPath: compass
