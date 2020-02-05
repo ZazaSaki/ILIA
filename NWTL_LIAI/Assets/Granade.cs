@@ -6,7 +6,7 @@ public class Granade : MonoBehaviour{
 
 
     public GameObject ExplosionEffect;
-
+    public GameObject Body;
     public float explosionForce = 700f;
     public float radius = 10f   ;
     public float delay = 3f;
@@ -42,6 +42,8 @@ public class Granade : MonoBehaviour{
 
 
     void Explode(){
+        
+        Destroy(Body);
         //Show effect
         tempEffect = Instantiate(ExplosionEffect, transform.position, transform.rotation);
         ParticleSystem part = tempEffect.GetComponent<ParticleSystem>();
