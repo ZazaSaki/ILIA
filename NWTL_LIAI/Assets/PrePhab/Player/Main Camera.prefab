@@ -230,6 +230,21 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 8506278478060578623}
+    - target: {fileID: 5162849468202255976, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
+        type: 3}
+      propertyPath: AmmoByShot
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162849468202255976, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
+        type: 3}
+      propertyPath: IsFiring
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162849468202255976, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
+        type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5536862269364670698, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
         type: 3}
       propertyPath: fpsCam

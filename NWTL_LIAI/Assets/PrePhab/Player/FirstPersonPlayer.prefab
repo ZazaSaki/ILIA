@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1017899cfce624f8e9dd46e2cd1d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NoDamage: 0
   health: 100
   maxhealth: 100
 --- !u!114 &2845313921200694678
@@ -252,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4df8cff36b1124e98504b855d76220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InfinitAmmo: 0
   Ammo: 90
   MaxAmmo: 90
 --- !u!1001 &9216567966618773477

@@ -54,7 +54,7 @@ public class WeaponSwitching : MonoBehaviour{
             if (i == gunID){
                 //weapon.gameObject.SetActive(true);
                 actualGun = weapon;
-                MeshList =  weapon.GetComponent<Gun>().Mesh;
+                MeshList =  weapon.GetComponent<GunParent>().Mesh;
                 break;
 
             }else
@@ -86,8 +86,8 @@ public class WeaponSwitching : MonoBehaviour{
         return false;
     }
 
-    public Gun GetActualGun()
+    public GunParent GetActualGun()
     {   
-        return actualGun.GetComponent<Gun>();
+        return actualGun.GetComponent<GunParent>();
     }
 }
