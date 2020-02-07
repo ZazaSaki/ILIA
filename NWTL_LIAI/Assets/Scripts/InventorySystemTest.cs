@@ -25,7 +25,7 @@ public class InventorySystemTest : Tool
         }
     }
 
-    public override void Action(){
+    public override void Action(Transform Player){
         
     }
  
