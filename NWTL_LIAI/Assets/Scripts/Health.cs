@@ -26,6 +26,11 @@ public class Health : MonoBehaviour, IDamageable
         }
     }
 
+    public void heal(float amount){
+        health += amount;
+        health = (health > maxhealth)? maxhealth : health;
+    }
+
     void Die (){
         Destroy(gameObject); 
     }

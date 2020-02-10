@@ -13,6 +13,7 @@ public class Granade : MonoBehaviour{
     float countdown;
     bool hasExploded = false;
     GameObject tempEffect;
+    public float damage;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +61,11 @@ public class Granade : MonoBehaviour{
                     rb.AddExplosionForce(explosionForce, transform.position, radius);
                 }
                 //aply damage
-
+                Health h = nearbyObject.GetComponent<Health>();
+                if (h!=null)
+                {
+                    h.TakeDamage(damage);
+                }
                 
             }
     }

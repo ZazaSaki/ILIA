@@ -213,6 +213,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6858286878664400855, guid: b20a0ba0a88597d4c8efb5ce83562912,
         type: 3}
+    - target: {fileID: 5862591748659862218, guid: 9065fa387059f7e4596ef7d8bf20dd65,
+        type: 3}
+      propertyPath: lauchingForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862591748659862218, guid: 9065fa387059f7e4596ef7d8bf20dd65,
+        type: 3}
+      propertyPath: fireRate
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5946446326801838616, guid: 9065fa387059f7e4596ef7d8bf20dd65,
         type: 3}
       propertyPath: m_LocalPosition.x

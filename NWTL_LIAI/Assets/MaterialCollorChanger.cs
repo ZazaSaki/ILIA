@@ -1,0 +1,36 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MaterialCollorChanger : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ChangeCollor();
+        
+    }
+
+    void ChangeCollor(){
+        List<Material> m = new List<Material>();
+        this.GetComponent<MeshRenderer>().GetMaterials(m);
+        Debug.Log(m[0].color);
+        float health = this.GetComponent<Health>().health;
+        float maxHealth = this.GetComponent<Health>().maxhealth;
+        
+        float green = health/maxHealth;
+        float red = 1 - green;
+        
+        Color c = new Color(red,green,0,1);
+        Debug.Log(c);
+
+        int id = Shader.PropertyToID("health" + gameObject);
+        m[0].color = c;
+    }
+}
