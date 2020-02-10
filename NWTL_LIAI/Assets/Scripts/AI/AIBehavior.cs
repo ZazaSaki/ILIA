@@ -4,16 +4,33 @@ using UnityEngine.AI;
 
 public class AIBehavior : MonoBehaviour{   
 
-    public NavMeshAgent Agent;
-//Black Board
-    //Player vars
-    Vector3 playerLoc;
-    bool playerIsFiring;
-    bool playerIsRunning;
+    //Debug var
+    public float TargetDistance;
 
-    //Base vars
+
+    //Public var
+    public NavMeshAgent Agent;
+    public float SecureDistance;
+    public bool MealeDamage;
+//Black Board
+    
+    //Player Stats
+    Vector3 playerLoc;
+    bool playerIsFiring = false;
+    bool playerIsRunning = false;
+    bool playerIsMoving = false;
+
+    
+    //Base Stats
     Vector3 baseLoc;
-    bool baseIsActive;
+    bool baseIsActive = false;
+
+    
+    //Target Stats
+    bool IsInRange = false;
+    bool IsInSecureRange = false;
+    Vector3 Target;
+    float distanceToSecureAttack;
 
 
 //Behavior
@@ -22,27 +39,115 @@ public class AIBehavior : MonoBehaviour{
     void Update()
     {
         FindPlayer();
-        IsDetected();
-        //ChasePlayer();
+        
+        Target = playerLoc;
+        
+        if (FindActiveBase()){
+            ChaseTarget();
+            CheckTargeDistance();
+            if (IsInRange){
+                attack();
+            }
+        
+        }
+        
+        if (IsPlayerDetected() && setTarget(playerLoc)){
+            
+            ChaseTarget();
+
+            //Chenking atack
+            if (IsInRange){
+                //Verify if player is moving, and attack if player is stoped
+                if (!playerIsMoving){
+                    distanceToSecureAttack = 0;
+                
+                //if player is moving, get close and attack until is out of range
+                }else if (IsInSecureRange){
+                    distanceToSecureAttack = 0;
+                    attack();
+                }
+            //randomize the secure distance to attack
+            }else if(MealeDamage){
+                distanceToSecureAttack = getRandom(SecureDistance);
+            }
+            
+        }
+        
     }
 
     public void FindPlayer(){
+        //player Refrence
         PlayerMovement player = FindObjectOfType<PlayerMovement>();
         
-        
-        playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
+        //Updating Player Status
+        playerIsMoving = playerLoc == FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
         playerIsFiring = player.GetComponentInChildren<WeaponSwitching>().GetActualGun().IsFiring;
         playerIsRunning = player.IsRunning;
+
+        //updating player Location
+        playerLoc = FindObjectOfType<PlayerMovement>().GetComponent<Transform>().position;
     }
 
-    public void FindActiveBase(){
+    public bool FindActiveBase(){
+        bool ret = false;
+
+        BaseParent[] baseList = FindObjectsOfType<BaseParent>();
         
+        //if there are no bases
+        if (baseList.Length == 0){
+            return false;
+        }
+
+        //closest : first value
+        foreach (BaseParent item in baseList){
+            
+            if(item.IsActive){
+                if (setTarget(item.GetComponent<Transform>().position))
+                {
+                    ret = true;
+                }
+                
+                Debug.Log("is Base active : " + gameObject);
+            }
+            
+        }
+        return ret;
     }
 
-    public bool IsDetected(){
+    public float CheckTargeDistance(){
+        //checking Player Distance
+        float distance = (Target - GetComponent<Transform>().position).magnitude;
+
+        TargetDistance = distance;
+
+        //Checking if player is in range
+        IsInRange = GetEnemieParentScript().attackRange > distance;
+        
+        //Calculate if player is close enough to do a sucessfull attack
+        IsInSecureRange = (MealeDamage || (playerLoc != Target) ? true : (GetEnemieParentScript().attackRange - distanceToSecureAttack > distance));
+    
+        return distance;
+    }
+
+    public bool setTarget(Vector3 Location){
+        float distance = (Location - GetTransform().position).magnitude;
+        
+        if ((TargetDistance >= distance) || !IsPlayerDetected()){
+            Target = Location;
+            TargetDistance = distance;
+            return true;
+        }
+
+        return false;   
+    }
+
+    public bool IsPlayerDetected(){
         DetectionStats stats = GetComponent<DetectionStats>();
-        float distance = (playerLoc - GetComponent<Transform>().position).magnitude;
         
+        //checking Player Distance
+        float distance = CheckTargeDistance();
+       
+        //Checking Player Detection
         if (distance < stats.FireRange){
             if (playerIsFiring) return true;
 
@@ -54,9 +159,10 @@ public class AIBehavior : MonoBehaviour{
         }
         return false;
     }
+    
 
-    public void ChasePlayer(){
-        Agent.SetDestination(playerLoc);
+    public void ChaseTarget(){
+        Agent.SetDestination(Target);
     }
 
     public void attack(){
@@ -69,5 +175,11 @@ public class AIBehavior : MonoBehaviour{
 
     public Transform GetTransform(){
         return GetComponent<Transform>();
+    }
+
+    public float getRandom(float max){
+        float rand = (float)(new System.Random().NextDouble());
+
+        return rand * (max);
     }
 }

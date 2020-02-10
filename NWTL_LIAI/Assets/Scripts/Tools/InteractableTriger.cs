@@ -9,11 +9,15 @@ public class InteractableTriger : MonoBehaviour {
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other) {
         Debug.Log(item);
-        other.transform.GetComponent<PlayerInteractor>().setInteract(item);
+        if(other.transform.GetComponent<PlayerInteractor>() != null){
+            other.transform.GetComponent<PlayerInteractor>().setInteract(item);
+        }
     }
 
     private void OnTriggerExit(Collider other) {
-        other.transform.GetComponent<PlayerInteractor>().resetInteract();
+       if(other.transform.GetComponent<PlayerInteractor>() != null){
+           other.transform.GetComponent<PlayerInteractor>().resetInteract();
+        }
     }
     
 }

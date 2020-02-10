@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMaster : MonoBehaviour
+public class BaseManager : MonoBehaviour
 {   
     public Hashtable list = new Hashtable();
-    string[] BasePath = {"base1", "base2", "base3"};
+    public string[] BasePath = {"base1", "base2", "base3"};
     public Transform player;
-
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        
         //inicializating base list
         foreach (BaseParent item in FindObjectsOfType(typeof(BaseParent)))
         {   
             //CHECKING REPEATED BASES
             if (!list.ContainsKey(item.id))
             {   
-                list.Add(item.id, new int[2]{0,1});
+                list.Add(item.id, new int[3]{0,1,0});
 
                 Debug.Log(item.id);
             }else{
@@ -27,29 +28,7 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void sequence(string id){
-        //string s = (string)list[id];
-        Debug.Log(id);
-        findBase(id);
-
-        switch (((int[])list[id])[0])
-        {
-            case 0: goNextBase(id);
-                break;
-
-            default: Debug.Log("non defined option");
-                break;
-        }
-
-    }
-
-    private BaseParent findBase(string id){
+    public BaseParent findBase(string id){
         BaseParent output = null;
 
         //searching in every base
@@ -72,7 +51,8 @@ public class GameMaster : MonoBehaviour
         return output;
     }
 
-    private BaseParent findNextBase(string id){
+
+    public BaseParent findNextBase(string id){
         int i = 0;
         
         //Search in BasePath
@@ -91,19 +71,31 @@ public class GameMaster : MonoBehaviour
         return null;
     }
 
-    private void goNextBase(string id){
+    public void goNextBase(string id){
+        findBase(id).Reset();
         BaseParent b = findNextBase(id);
-        Debug.Log("This base: " + id);
-        Debug.Log("Next Base: " + b.id);
-        Debug.Log("Next Base Transform: " + b.GetComponent<Transform>());
+        
         //getting the transform of the next base
         Transform NextBaseTransform =(b == null) ? null : b.GetComponent<Transform>();
-        
-        Debug.Log("Checking Last: " + NextBaseTransform);
         
         //setting the compass
 
         Debug.Log(player.GetComponent<compassChanger>());
         player.GetComponent<compassChanger>().PointTo(NextBaseTransform);
+    }
+
+    public int[] getList(string id){
+        return (int[])list[id];
+    }
+
+    public int getIncrementedSeq(string id){
+        int[] seq = (int[])list[id];
+        int i = ++seq[0];
+         
+         if (i < seq.Length){
+             return seq[i];
+         }else{
+             return 99;
+         }
     }
 }

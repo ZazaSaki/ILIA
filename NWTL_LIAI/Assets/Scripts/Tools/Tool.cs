@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
 
 public abstract class Tool : MonoBehaviour{
-    public abstract void Action();
+    public abstract void Action(Transform Player);
 }

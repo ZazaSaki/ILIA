@@ -1,46 +1,15 @@
 ﻿using UnityEngine;
 
-public class Gun : MonoBehaviour{
+public class Gun : GunParent{
+
+    //Gun Stats
     public float damage = 10f;
     public float impactForce = 30f;
     public float range = 50f;
-    public float fireRate = 50f;
-    public int ammo = 10;
-    public int maxAmmo = 10;
-
-    private float nextTimeToFire = 0f;
-    public bool IsFiring = false;
-
-    public Camera fpsCam;
-    // Start is called before the first frame update
-    void Start(){
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (IsFiring){
-            if (Time.time >= nextTimeToFire){
-                IsFiring = false;
-            }
-        }
-    }
-
-    public void Fire(){
-        if (Time.time >= nextTimeToFire){
-            nextTimeToFire = Time.time + 1f/fireRate;
-            Shoot();
-            IsFiring = true;
-        }
-    }
     
-    void Shoot(){
+    
+    public override void Shoot(){
         RaycastHit hit;
-        
-        if (ammo < 1)
-        {
-            return;
-        }
         
         //RayCast
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
@@ -59,7 +28,9 @@ public class Gun : MonoBehaviour{
         }
 
 
-        ammo--;
+        decreaseAmmo();
 
     }
+
+    
 }

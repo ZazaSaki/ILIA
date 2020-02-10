@@ -7,7 +7,7 @@ public class Computer : Tool{
     public BaseParent baseParent; 
     
     
-    public override void Action()
+    public override void Action(Transform Player)
     {
         Debug.Log("Computer is Active");
         baseParent.ComputerActivated();
