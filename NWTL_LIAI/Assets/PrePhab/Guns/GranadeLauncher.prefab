@@ -129,4 +129,4 @@ MonoBehaviour:
   Projectile: {fileID: 6858286878664400855, guid: b20a0ba0a88597d4c8efb5ce83562912,
     type: 3}
   lauchingPoint: {fileID: 4035719848682707325}
-  lauchingForce: 0
+  lauchingForce: 20
