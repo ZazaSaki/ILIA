@@ -162,6 +162,8 @@ public class AIBehavior : MonoBehaviour{
     
 
     public void ChaseTarget(){
+        
+        Debug.Log(Target);
         Agent.SetDestination(Target);
     }
 
