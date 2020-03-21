@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4867359690471727937}
   - component: {fileID: 4867359690471727936}
   - component: {fileID: 4867359690471727939}
+  - component: {fileID: 7694917525033841040}
   m_Layer: 0
   m_Name: AI_Tester
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 86b8d3ac8f25bbb448a8102788229f25, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -181,3 +182,15 @@ MonoBehaviour:
   type: 0
   size: 0
   attackRange: 10
+--- !u!114 &7694917525033841040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867359690471727994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fa1e0688e023843acfc9c0ee3b410a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

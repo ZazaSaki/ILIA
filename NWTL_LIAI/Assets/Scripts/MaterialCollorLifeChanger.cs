@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialCollorChanger : MonoBehaviour
+public class MaterialCollorLifeChanger : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,11 +13,11 @@ public class MaterialCollorChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangeCollor();
+        ChangeColor();
         
     }
 
-    void ChangeCollor(){
+    void ChangeColor(){
         List<Material> m = new List<Material>();
         this.GetComponent<MeshRenderer>().GetMaterials(m);
         
