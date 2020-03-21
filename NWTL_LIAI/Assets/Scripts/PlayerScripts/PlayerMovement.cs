@@ -3,7 +3,9 @@
 public class PlayerMovement : MonoBehaviour{
 
     public CharacterController controller;
-    public float speed = 12f;
+    public float speed;
+    public float walckSpeed = 6f;
+    public float RunSpeed = 12f;
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     public float jumpHeight = 2f;
@@ -20,6 +22,8 @@ public class PlayerMovement : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
+        speed = walckSpeed;
+        
         jumpHeight = jumpHeight * multipier;
         maxFallHeight = maxFallHeight * multipier;
         gravity = gravity * Mathf.Sqrt(multipier);
@@ -60,5 +64,13 @@ public class PlayerMovement : MonoBehaviour{
         Vector3 move = transform.right * HorizontalAxis + transform.forward * VerticalAxis;
 
         controller.Move(move * speed * Time.deltaTime);
+    }
+
+    public void setToRunSpeed(){
+        speed = RunSpeed;
+    }
+    
+    public void setToWalckSpeed(){
+        speed = walckSpeed;
     }
 }

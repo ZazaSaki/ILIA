@@ -16,11 +16,15 @@ public class KeyHandler : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {   
+        //move keys
+        moveScript.walck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
         //Move Keys
         if (Input.GetButtonDown("Jump")){moveScript.jump();}
 
-        moveScript.walck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
+        //Run
+        if (Input.GetButtonDown("Left Shift")){moveScript.setToRunSpeed();} 
+        if (Input.GetButtonUp("Left Shift")){moveScript.setToWalckSpeed();}
         
         //Gun Keys
         if (Input.GetButtonDown("Fire1")){gunList.GetActualGun().Fire();}
