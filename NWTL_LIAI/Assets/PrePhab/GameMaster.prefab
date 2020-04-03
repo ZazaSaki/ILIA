@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2180584138477385272}
   - component: {fileID: 5321401703714724687}
   - component: {fileID: 8655943319963828772}
+  - component: {fileID: 544513606526996095}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -106,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd87f09508ac1644906b124b6dc9640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugPoint: {fileID: 0}
+  EspecialSeq: 
   player: {fileID: 0}
 --- !u!114 &5321401703714724687
 MonoBehaviour:
@@ -119,7 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e047ef8cacf9b41a8037679442d385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AI_Tester: {fileID: 0}
+  BasePathList: []
+  BasePathList2: []
+  CurrentBaseID: 
   player: {fileID: 0}
 --- !u!114 &8655943319963828772
 MonoBehaviour:
@@ -135,3 +140,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   List: []
   nav: {fileID: 0}
+  ObjectToSpawn: {fileID: 0}
+  DebugPoint: {fileID: 0}
+--- !u!114 &544513606526996095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180584138477385273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccc716aef7faf14387d6342ae33b86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SetEventListE:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SetEventList:
+  - B.F.F
