@@ -5,14 +5,30 @@ using UnityEngine;
 public class BaseManager : MonoBehaviour
 {   
     public Hashtable list = new Hashtable();
-    public string[] BasePath = {"base1", "base2", "base3"};
+    public BaseParent[] BasePathList;
+    public BaseParent[] BasePathList2;
+    public LinkedList<string> BasePathID = new LinkedList<string>();
+    public LinkedListNode<string> CurrentListId;
+    public string CurrentBaseID;
     public Transform player;
     
+    private string Notification = "N.B.";
     
     
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        
+        //Loading the the baselist ID
+        foreach (BaseParent item in BasePathList){
+            BasePathID.AddLast(item.id);
+        }
+
+        //Loading the first Base
+        CurrentListId = BasePathID.First;
+        
+
+        
         //inicializating base list
         foreach (BaseParent item in FindObjectsOfType(typeof(BaseParent)))
         {   
@@ -51,37 +67,62 @@ public class BaseManager : MonoBehaviour
         return output;
     }
 
-
     public BaseParent findNextBase(string id){
         int i = 0;
         
+        
         //Search in BasePath
-        foreach (string item in BasePath){
-            if (item.Equals(id)){
-                //retunning next base
-                if (i+1<BasePath.Length)
-                    return findBase(BasePath[++i]);
-                else
-                    Debug.Log("No More Bases");
-
-            }
-            i++;
+        if (CurrentListId.Next != null)
+        {   
+            CurrentListId = CurrentListId.Next;
+            return findBase(CurrentListId.Value);
         }
 
         return null;
     }
 
     public void goNextBase(string id){
-        findBase(id).Reset();
+        resetCurrrentBase();
         BaseParent b = findNextBase(id);
-        
+        CurrentBaseID = b.id;
+
         //getting the transform of the next base
         Transform NextBaseTransform =(b == null) ? null : b.GetComponent<Transform>();
         
-        //setting the compass
+        if (b!=null){
+            b.unlock();
+            Debug.Log("unlock: "+ b.id);
+        }
 
+        //setting the compass
         Debug.Log(player.GetComponent<compassChanger>());
         player.GetComponent<compassChanger>().PointTo(NextBaseTransform);
+
+        //notify Event Mabager
+        em().Notify(Notification + CurrentBaseID + ".G");
+    }
+
+    public void goBase(string id){
+        resetCurrrentBase();
+        BaseParent b = findBase(id);
+        CurrentBaseID = b.id;
+
+        //getting the transform of the next base
+        Transform NextBaseTransform =(b == null) ? null : b.GetComponent<Transform>();
+        
+        if (b!=null){
+            b.unlock();
+            Debug.Log("unlock: "+ b.id);
+        }
+
+        //setting the compass
+        Debug.Log("Player Here: " + player.GetComponent<compassChanger>());
+        player.GetComponent<compassChanger>().PointTo(NextBaseTransform);
+
+        //notify Event Mabager
+        em().Notify(Notification + CurrentBaseID + ".G");
+        Debug.Log("BaseManager: " + Notification + CurrentBaseID + ".G");
+
     }
 
     public int[] getList(string id){
@@ -97,5 +138,19 @@ public class BaseManager : MonoBehaviour
          }else{
              return 99;
          }
+    }
+
+    public void resetCurrrentBase(){
+        resetBase(CurrentBaseID);
+    }
+
+    public void resetBase(string id){
+        if (findBase(id)!=null){
+            findBase(id).Reset();
+        }
+    }
+
+    public EventManager em (){
+        return FindObjectOfType<EventManager>();
     }
 }
