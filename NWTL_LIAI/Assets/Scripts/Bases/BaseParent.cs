@@ -11,6 +11,9 @@ public class BaseParent : MonoBehaviour{
     public bool IsActive = false;
     public bool locked = true;
     public Door door;
+    public bool EspecialSeq = false;
+
+    private string Notification;
 
     private void Start() {
         if (locked){
@@ -18,16 +21,21 @@ public class BaseParent : MonoBehaviour{
         }else{
             cc().green();
         }
+
+        Notification = "N.B." + id;
         
     }
     
     public void ComputerActivated(){
+        Debug.Log("IsActive: " + IsActive + ", locked: " + locked);
+        
         if (!IsActive && !locked)
         {
             IsActive = true;
             Debug.Log("Base " + id + " recieved computer action");
             cc().blue();
-            Sequence();
+            NotifyEventManager();
+            ComputeKey();
         }else{
             Debug.Log("Base Locked");
         }
@@ -37,12 +45,17 @@ public class BaseParent : MonoBehaviour{
     public void Reset(){
         IsActive = false;
         cc().green();
+        em().Notify(Notification + ".R");
+        Debug.Log("Base " + id + " notify:" + Notification + "." + id + ".R");
     }
 
+    public void ComputeKey(){
 
+    }
     
-    public void Sequence(){
-        gm().sequence(id);
+    public void NotifyEventManager(){
+        em().Notify(Notification + ".A");
+        Debug.Log("Base " + id + " notify: " + Notification + ".A");
     }
 
     public void UnlockDooor(){
@@ -50,12 +63,18 @@ public class BaseParent : MonoBehaviour{
     }
 
     public void unlock(){
+        
+        locked = false;
         UnlockDooor();
-        cc().green();
+        //Reset();
     }
     
     private GameMaster gm (){
         return FindObjectOfType<GameMaster>(); 
+    }
+
+    private EventManager em(){
+        return FindObjectOfType<EventManager>();
     }
 
     private ColorChanger cc(){

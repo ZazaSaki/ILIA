@@ -4,7 +4,7 @@ public class Compass : UI_Widget{
 
     private Vector3 north;
     
-    private Transform missionPlace;
+    private Vector3 missionPlace;
     private Quaternion mission;//*/
  
     public RectTransform northLayer;
@@ -34,7 +34,7 @@ public class Compass : UI_Widget{
     
     private void updateMission(){
         //Director vector to quaternion
-        Vector3 vectorDirector = player().position - missionPlace.position;
+        Vector3 vectorDirector = player().position - missionPlace;
         mission = Quaternion.LookRotation(vectorDirector);
 
 
@@ -47,6 +47,10 @@ public class Compass : UI_Widget{
     }//*/
 
     public void changeMission(Transform newMission){
+        missionPlace = newMission.position;
+    }
+
+    public void changeMission(Vector3 newMission){
         missionPlace = newMission;
     }
 }

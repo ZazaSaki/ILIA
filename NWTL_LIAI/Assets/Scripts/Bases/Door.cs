@@ -8,6 +8,7 @@ public class Door : Tool
     public bool Locked = true;
     private bool Opened = false;
 
+    public string id;
     public Animation anim;
 
     public override void Action(Transform Player){
