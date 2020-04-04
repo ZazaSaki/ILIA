@@ -6,19 +6,19 @@ using UnityEngine.Animations;
 public class Door : Tool
 {
     public bool Locked = true;
-    private bool Opened = false;
+    protected bool Opened = false;
 
     public string id;
     public Animation anim;
 
     public override void Action(Transform Player){
-        if (!anim.isPlaying)
-        {
+        if (!anim.isPlaying){
             if (Opened)close();    
             else open();
-    }
         }
+    }
 
+    
     public void open(){
         anim.CrossFade("DoorOpen");
         Opened = true;
