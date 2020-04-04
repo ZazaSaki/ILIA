@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 2845313921200694678}
   m_Layer: 0
   m_Name: FirstPersonPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 714819510436487867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.69, y: 2.36, z: -9.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 714819509796809857}
   - {fileID: 714819511002824923}
@@ -179,6 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 714819510436487864}
   speed: 12
+  walckSpeed: 6
+  RunSpeed: 12
   gravity: -9.81
   groundDistance: 0.4
   jumpHeight: 1
