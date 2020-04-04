@@ -20,7 +20,11 @@ public class MissionEvent : MonoBehaviour
         
         if (other.tag == "Player"){
             FindObjectOfType<EventManager>().Notify(Notification);
+            Debug.Log("auto bum next");
+            Destroy(gameObject);
         }
+
+        
     }
 
     // Update is called once per frame
