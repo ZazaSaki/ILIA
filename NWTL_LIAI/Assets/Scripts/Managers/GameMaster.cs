@@ -52,7 +52,7 @@ public class GameMaster : MonoBehaviour{
             case 0: GetBaseManager().goNextBase(id);
                 break;
 
-            case 1: InvokeRepeating("SpawnRepeat", rate, rate);
+            case 1: SpawnRepeat();
                 break;
             
             default: GetBaseManager().findBase(id).Reset();
@@ -78,7 +78,7 @@ public class GameMaster : MonoBehaviour{
     public void SpawnRepeat(){
         Vector3 loc = GetBaseManager().findBase(id).GetComponent<Transform>().position;
         Debug.Log(loc);
-        GetSpawnManager().spawnByBase(loc, 30, 3, 6);
+        GetSpawnManager().spawnByBaseInvoke(loc, 30, 3, 6, 3);
     }
 
     private SpawnManager GetSpawnManager(){
