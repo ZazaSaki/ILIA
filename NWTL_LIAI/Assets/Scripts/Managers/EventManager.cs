@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class EventManager : MonoBehaviour
@@ -15,12 +16,15 @@ public class EventManager : MonoBehaviour
     
     
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){   
+        readFile(InfoList);
+
+        /*
         //Filling the event List
         foreach (string item in SetEventList){
             InfoList.AddLast(item);
         }
+        */
         CurrentInfo = InfoList.First;
         
         //trigerring the first event
@@ -188,4 +192,20 @@ public class EventManager : MonoBehaviour
     public DoorManager getDoorManager(){
         return FindObjectOfType<DoorManager>();
     }
+
+    public void readFile(LinkedList<string> lista){
+        string path = "Assets/Scripts/Managers/StoryScript/Script.txt";
+        
+        using (StreamReader sr = File.OpenText(path))
+        {
+            string s;
+            while ((s = sr.ReadLine()) != null)
+            {
+                Debug.Log(s);
+                lista.AddLast(s);
+                Debug.Log("Setted");
+            }
+        }
+    }
+
 }
