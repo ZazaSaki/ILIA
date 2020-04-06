@@ -120,7 +120,9 @@ public class EventManager : MonoBehaviour
             case "G": getBaseManager().goBase(id);
                 break;
             
-            case "D": Debug.Log("Defend");
+            case "D": Vector3 loc = getBaseManager().findBase(id).GetComponent<Transform>().position;
+                Debug.Log(loc);
+                getSpawnManager().spawnByBaseInvoke(loc, 30, 3, 6, 3);
                 break;
 
             case "R": getBaseManager().resetCurrrentBase();
@@ -193,6 +195,10 @@ public class EventManager : MonoBehaviour
         return FindObjectOfType<DoorManager>();
     }
 
+    public SpawnManager getSpawnManager(){
+        return FindObjectOfType<SpawnManager>();
+    }
+
     public void readFile(LinkedList<string> lista){
         string path = "Assets/Scripts/Managers/StoryScript/Script.txt";
         
@@ -200,7 +206,8 @@ public class EventManager : MonoBehaviour
         {
             string s;
             while ((s = sr.ReadLine()) != null)
-            {
+            {   
+                if (s.Equals("*")){break;}
                 Debug.Log(s);
                 lista.AddLast(s);
                 Debug.Log("Setted");
