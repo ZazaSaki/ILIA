@@ -122,7 +122,7 @@ public class EventManager : MonoBehaviour
             
             case "D": Vector3 loc = getBaseManager().findBase(id).GetComponent<Transform>().position;
                 Debug.Log(loc);
-                getSpawnManager().spawnByBaseInvoke(loc, 30, 3, 6, 3);
+                getSpawnManager().spawnByBaseInvoke(loc, 5, 3, 6, 3);
                 break;
 
             case "R": getBaseManager().resetCurrrentBase();

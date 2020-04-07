@@ -1605,11 +1605,31 @@ PrefabInstance:
       propertyPath: multipier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1590569970856081009, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590569970856081009, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: damage
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 5626677012928602421, guid: 421acd2d0326f6d4ba992c788989d5ce,
         type: 3}
       propertyPath: compass
       value: 
       objectReference: {fileID: 833566296}
+    - target: {fileID: 6401921301873013684, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401921301873013684, guid: 421acd2d0326f6d4ba992c788989d5ce,
+        type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 421acd2d0326f6d4ba992c788989d5ce, type: 3}
 --- !u!1 &985534554
@@ -3513,7 +3533,7 @@ PrefabInstance:
     - target: {fileID: 2180584138477385220, guid: 0e64bdfecba6ce84e81377a67c837028,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.310196
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 2180584138477385220, guid: 0e64bdfecba6ce84e81377a67c837028,
         type: 3}
@@ -3523,7 +3543,7 @@ PrefabInstance:
     - target: {fileID: 2180584138477385220, guid: 0e64bdfecba6ce84e81377a67c837028,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.171787
+      value: -16.1
       objectReference: {fileID: 0}
     - target: {fileID: 2180584138477385220, guid: 0e64bdfecba6ce84e81377a67c837028,
         type: 3}
@@ -3639,7 +3659,8 @@ PrefabInstance:
         type: 3}
       propertyPath: ObjectToSpawn
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4867359690471727994, guid: c0cf5c6ef34bc404d95594e3b8590710,
+        type: 3}
     - target: {fileID: 8655943319963828772, guid: 0e64bdfecba6ce84e81377a67c837028,
         type: 3}
       propertyPath: List.Array.data[0]
