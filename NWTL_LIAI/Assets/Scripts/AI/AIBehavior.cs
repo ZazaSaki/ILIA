@@ -107,7 +107,7 @@ public class AIBehavior : MonoBehaviour{
                     ret = true;
                 }
                 
-                Debug.Log("is Base active : " + gameObject);
+                //Debug.Log("is Base active : " + gameObject);
             }
             
         }
@@ -163,7 +163,7 @@ public class AIBehavior : MonoBehaviour{
 
     public void ChaseTarget(){
         
-        Debug.Log(Target);
+        //Debug.Log(Target);
         Agent.SetDestination(Target);
     }
 
