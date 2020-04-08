@@ -169,7 +169,7 @@ public class EventManager : MonoBehaviour
             case "B":Base(id, action);
                 break;
 
-            case "D": Debug.Log("D founded"); 
+            case "D": Door(id, action); 
                 break;
 
             case "M": Mission(id, action); 
@@ -200,7 +200,7 @@ public class EventManager : MonoBehaviour
     }
 
     public void readFile(LinkedList<string> lista){
-        string path = "Assets/Scripts/Managers/StoryScript/Script.txt";
+        string path = "Assets/Scripts/Managers/StoryScript/Script2.txt";
         
         using (StreamReader sr = File.OpenText(path))
         {

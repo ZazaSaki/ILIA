@@ -31,13 +31,19 @@ public class Door : Tool
 
     public void lockDoor(){
         Locked = true;
+        em().Notify("N.D." + id + ".L");
     }
 
     public void unlockDoor(){
         Locked = false;
+        em().Notify("N.D." + id + ".U");
     }
 
     public bool IsLocked(){
         return Locked;
+    }
+
+    public EventManager em(){
+        return FindObjectOfType<EventManager>();
     }
 }
