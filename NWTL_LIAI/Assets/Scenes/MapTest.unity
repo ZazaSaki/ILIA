@@ -2904,7 +2904,7 @@ PrefabInstance:
     - target: {fileID: 6778147937575348310, guid: 1a237f9086824c540836104a66c984da,
         type: 3}
       propertyPath: id
-      value: BG
+      value: CG
       objectReference: {fileID: 0}
     - target: {fileID: 6778147937575348310, guid: 1a237f9086824c540836104a66c984da,
         type: 3}
@@ -4610,7 +4610,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2086023573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df3aa311dd247f4e91081c3e27dbcfd, type: 3}
+  m_Script: {fileID: 11500000, guid: cb40cf818240c5f4088db25a2991ce21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &240458739329584765
