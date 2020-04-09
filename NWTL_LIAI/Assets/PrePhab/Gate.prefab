@@ -50,6 +50,19 @@ MonoBehaviour:
   id: 
   anim: {fileID: 0}
   BodyLock: {fileID: 6778147939321155268}
+  Changer: {fileID: 7880040152274577008}
+--- !u!114 &7880040152274577008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778147938002484612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1345e2d1c9cab884ea6e970f2ee86c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &6778147938710466786
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -249,6 +262,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: 9c4d1d427fe6cf44eb6c98bafc10b439, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86b8d3ac8f25bbb448a8102788229f25, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c4d1d427fe6cf44eb6c98bafc10b439, type: 3}
 --- !u!1 &6778147938002484614 stripped
@@ -260,6 +277,12 @@ GameObject:
 --- !u!4 &6778147938002051494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 9c4d1d427fe6cf44eb6c98bafc10b439,
+    type: 3}
+  m_PrefabInstance: {fileID: 6778147938002451234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6778147938002484612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: 9c4d1d427fe6cf44eb6c98bafc10b439,
     type: 3}
   m_PrefabInstance: {fileID: 6778147938002451234}
   m_PrefabAsset: {fileID: 0}
