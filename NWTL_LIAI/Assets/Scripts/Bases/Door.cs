@@ -29,7 +29,7 @@ public class Door : Tool
         Opened = false;
     }
 
-    public void lockDoor(){
+    public void lockGate(){
         Locked = true;
         em().Notify("N.D." + id + ".L");
     }

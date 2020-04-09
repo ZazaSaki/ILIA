@@ -22,15 +22,15 @@ public class ColorChanger : MonoBehaviour
     }
 
     public void green(){
-        m[0].color = Color.green;
+        color(0,1,0);
     }
 
     public void blue(){
-        m[0].color = Color.blue;
+        color(0,0,1);
     }
 
     public void red(){
-        m[0].color = Color.red;
+       color(1,0,0);
     }
 
     
