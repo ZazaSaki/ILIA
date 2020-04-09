@@ -12,6 +12,7 @@ public class BaseParent : MonoBehaviour{
     public bool locked = true;
     public Door door;
     public bool EspecialSeq = false;
+    public Transform[] SpawnPointList;
 
     private string Notification;
 

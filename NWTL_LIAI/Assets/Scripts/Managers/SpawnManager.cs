@@ -19,6 +19,7 @@ public class SpawnManager : MonoBehaviour{
     private float BaseRayInv;
     private int maxEnemiesAtOnceInv;
     private int EnemiesToSpawnInv;
+    private Transform[] SpawnPointsInv;
 
 
 
@@ -87,11 +88,7 @@ public class SpawnManager : MonoBehaviour{
     public void spawnByBase(){
         float SpawnRange = 20;
         //Start Counting the spawns
-        if (!Spawning)
-        {
-            Spawning = true;
-            NumOfSpawns = EnemiesToSpawnInv;
-        }
+        StartSpawning();
         
         //Random object to generate Random numbers (double)
         System.Random rand = new System.Random();
@@ -151,6 +148,41 @@ public class SpawnManager : MonoBehaviour{
         EnemiesToSpawnInv = EnemiesToSpawn;
         InvokeRepeating("spawnByBase", rate, rate);
     }
+
+    public void spawnByBaseFixed(){
+        StartSpawning(); 
+
+        System.Random rand = new System.Random();
+        
+        int r = (int)(rand.NextDouble() * SpawnPointsInv.Length);
+        
+        spawn(SpawnPointsInv[r].position); 
+        NumOfSpawns--;
+
+        //chencking the number of spawned enemies
+        if (NumOfSpawns < 1)
+        {
+            StopSpawning();
+        }
+        
+        
+    }
+
+    public void spawnByBaseInvokeFixed(Transform[] points, int maxEnemiesAtOnce, int EnemiesToSpawn, float rate){
+        SpawnPointsInv = points;
+        maxEnemiesAtOnceInv = maxEnemiesAtOnce;
+        EnemiesToSpawnInv = EnemiesToSpawn;
+        InvokeRepeating("spawnByBaseFixed", rate, rate);
+    }
+
+    public void StartSpawning(){
+        if (!Spawning)
+        {
+            Spawning = true;
+            NumOfSpawns = EnemiesToSpawnInv;
+        }
+    }
+
     public void StopSpawning(){
         //Stop Calling the Spawn Function
         CancelInvoke();
