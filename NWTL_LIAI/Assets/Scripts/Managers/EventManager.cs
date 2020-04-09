@@ -123,7 +123,7 @@ public class EventManager : MonoBehaviour
             case "D": Vector3 loc = getBaseManager().findBase(id).GetComponent<Transform>().position;
                 Debug.Log(loc);
                 Transform[] temp = getBaseManager().findBase(id).SpawnPointList;
-                getSpawnManager().spawnByBaseInvokeFixed(temp, 3,6,3);
+                getSpawnManager().spawnByBaseInvokeFixed(temp, 3,1,1);
                 break;
 
             case "R": getBaseManager().resetCurrrentBase();
@@ -140,10 +140,13 @@ public class EventManager : MonoBehaviour
         
         switch (action)
         {
-            case "L": getDoorManager().lockDoor(id);
+            case "L": getDoorManager().lockGate(id);
                 break;
             
             case "U": getDoorManager().unlockDoor(id);
+                break;
+
+            case "LAG": getDoorManager().lockAllGates();
                 break;
             
             default: Debug.Log("No Action defined");
@@ -192,8 +195,8 @@ public class EventManager : MonoBehaviour
         return FindObjectOfType<BaseManager>();
     }
 
-    public DoorManager getDoorManager(){
-        return FindObjectOfType<DoorManager>();
+    public GateManager getDoorManager(){
+        return FindObjectOfType<GateManager>();
     }
 
     public SpawnManager getSpawnManager(){
