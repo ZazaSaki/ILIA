@@ -19,22 +19,22 @@ public class Door : Tool
     }
 
     
-    public void open(){
+    public virtual void open(){
         anim.CrossFade("DoorOpen");
         Opened = true;
     }
 
-    public void close(){
+    public virtual void close(){
         anim.CrossFade("CloseDoor");
         Opened = false;
     }
 
-    public void lockGate(){
+    public virtual void lockDoor(){
         Locked = true;
         em().Notify("N.D." + id + ".L");
     }
 
-    public void unlockDoor(){
+    public virtual void unlockDoor(){
         Locked = false;
         em().Notify("N.D." + id + ".U");
     }

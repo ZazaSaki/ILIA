@@ -20,7 +20,7 @@ public class EnemieParentScript : MonoBehaviour{
 
     public float attackRange;
 
-    public void attack(){
+    public virtual void attack(){
         //Debug.Log("attack");
     }
 

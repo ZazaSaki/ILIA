@@ -21,7 +21,7 @@ public class GateManager : MonoBehaviour
     }
 
     public void lockGate(string id){
-        findGate(id).lockGate();
+        findGate(id).lockDoor();
     }
 
     public Gate findGate(string id){

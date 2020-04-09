@@ -22,26 +22,24 @@ public class Gate : Door
         if (Opened)close(); else open();
     }
 
-    public void open(){
+    public override void open(){
         if(Locked)return;
         BodyLock.active = false;
         Opened = true;
     }
 
-    public void close(){
+    public override void close(){
         BodyLock.active = true;
         Opened = false;
     }
 
-    public void lockDoor(){
-        Locked = true;
-       Changer.red();
-        em().Notify("N.D." + id + ".L");
+    public override void lockDoor(){
+        base.lockDoor();
+        Changer.red();
     }
 
-    public void unlockDoor(){
-        Locked = false;
+    public override void unlockDoor(){
+        base.unlockDoor();
         Changer.green();
-        em().Notify("N.D." + id + ".U");
     }
 }
