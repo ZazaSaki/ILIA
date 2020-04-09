@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorManager : MonoBehaviour
+public class GateManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,23 +17,23 @@ public class DoorManager : MonoBehaviour
     }
 
     public void unlockDoor(string id){
-        findDoor(id).unlockDoor();
+        findGate(id).unlockDoor();
     }
 
-    public void lockDoor(string id){
-        findDoor(id).lockDoor();
+    public void lockGate(string id){
+        findGate(id).lockGate();
     }
 
-    public Door findDoor(string id){
-        Door output = null;
+    public Gate findGate(string id){
+        Gate output = null;
 
         //searching in every base
-        foreach (Door item in FindObjectsOfType<Door>())
+        foreach (Gate item in FindObjectsOfType<Gate>())
         {   
             //cheking the wanted id
             if (item.id.Equals(id)){
                 output = item;
-                Debug.Log("Base ID founded: " + output.id);
+                Debug.Log("Door ID founded: " + output.id);
                 return output;
             }
         }
@@ -45,5 +45,21 @@ public class DoorManager : MonoBehaviour
 
 
         return output;
+    }
+
+    public void lockAllGates(){
+
+        //searching in every base
+        foreach (Gate item in FindObjectsOfType<Gate>())
+        {   
+            item.close();
+            item.lockDoor();
+        }
+        
+        em().Notify("N.D..LAG");
+    }
+
+    private EventManager em(){
+        return FindObjectOfType<EventManager>();
     }
 }
