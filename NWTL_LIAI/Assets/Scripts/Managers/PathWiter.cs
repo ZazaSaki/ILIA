@@ -8,6 +8,7 @@ public class PathWiter : MonoBehaviour
 
     public string[] SetPathList;
     private LinkedList<string> PathList = new LinkedList<string>();
+    private LinkedList<string> FileList = new LinkedList<string>();
     private string NextNotification;
     private string Event;
     private string Notification;
@@ -15,8 +16,9 @@ public class PathWiter : MonoBehaviour
     
     void Start()
     {
-        
-        foreach (string item in SetPathList)
+        readFile(FileList);
+
+        foreach (string item in FileList)
         {
             read(item);
         }
@@ -39,9 +41,24 @@ public class PathWiter : MonoBehaviour
         
     }
 
+    public void readFile(LinkedList<string> lista){
+        string path = "Assets/Scripts/Managers/StoryScript/Script.txt";
+        
+        using (StreamReader sr = File.OpenText(path))
+        {
+            string s;
+            while ((s = sr.ReadLine()) != null)
+            {   
+                if (s.Equals("*")){break;}
+                Debug.Log(s);
+                lista.AddLast(s);
+                Debug.Log("Setted");
+            }
+        }
+    }
 
     public void write(){
-        string path = "Assets/Scripts/Managers/StoryScript/Script.txt";
+        string path = "Assets/Scripts/Managers/StoryScript/Script2.txt";
         if (!File.Exists(path))
         {
             // Create a file to write to.
