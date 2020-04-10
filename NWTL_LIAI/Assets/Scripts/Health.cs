@@ -31,7 +31,7 @@ public class Health : MonoBehaviour, IDamageable
         health = (health > maxhealth)? maxhealth : health;
     }
 
-    void Die (){
+    protected virtual void Die (){
         Destroy(gameObject); 
     }
 }

@@ -14,6 +14,7 @@ public class Granade : MonoBehaviour{
     bool hasExploded = false;
     GameObject tempEffect;
     public float damage;
+    public int i = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class Granade : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        countdown -= Time.deltaTime;
+        countdown -= Time.deltaTime * i;
 
         if (countdown <= 0 && !hasExploded){
             hasExploded = true;
@@ -35,15 +36,20 @@ public class Granade : MonoBehaviour{
             Destroy(tempEffect);
             //Destroy Granade
             Debug.Log("destroyed");
+            Destroy(tempEffect);
             Destroy(gameObject);
+            Debug.Log("desrrrrrrrrrrr");
         }
 
         
     }
 
+    public void setCountDown(float time){
+        countdown = time;
+    }
 
-    void Explode(){
-        
+    public void Explode(){
+        i = 1;
         Destroy(Body);
         //Show effect
         tempEffect = Instantiate(ExplosionEffect, transform.position, transform.rotation);

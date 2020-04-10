@@ -2,7 +2,17 @@
 using UnityEngine;
 
 public class EnemieParentScript : MonoBehaviour{
+    bool IsAttacking = false;
+    float nextTimeToAttack = 0;
+    float attackRate = 1;
 
+    private void Update() {
+        if (IsAttacking){
+            if (Time.time >= nextTimeToAttack){
+                IsAttacking = false;
+            }
+        }
+    }
     public enum Type
     {
         Fast, Thank, Balanced
@@ -19,9 +29,15 @@ public class EnemieParentScript : MonoBehaviour{
 
 
     public float attackRange;
-
+    public float damage;
     public virtual void attack(){
-        //Debug.Log("attack");
+         if (Time.time >= nextTimeToAttack){
+            nextTimeToAttack = Time.time + 1f/attackRate;
+            IsAttacking = true;
+        }else{
+            return;
+        }
+        Debug.Log("attack");
     }
 
     

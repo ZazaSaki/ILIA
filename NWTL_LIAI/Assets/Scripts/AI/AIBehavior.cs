@@ -122,6 +122,7 @@ public class AIBehavior : MonoBehaviour{
 
         //Checking if player is in range
         IsInRange = GetEnemieParentScript().attackRange > distance;
+        Debug.Log("Range" + IsInRange);
         
         //Calculate if player is close enough to do a sucessfull attack
         IsInSecureRange = (MealeDamage || (playerLoc != Target) ? true : (GetEnemieParentScript().attackRange - distanceToSecureAttack > distance));

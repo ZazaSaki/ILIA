@@ -13,7 +13,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.1551228, y: 1.5757524, z: 3.579366}
   m_Center: {x: -0.08060503, y: 0.17272574, z: 0.0921182}
---- !u!114 &9160315313755981352
+--- !u!114 &3570959677728307863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22,12 +22,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9160315314964626490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1017899cfce624f8e9dd46e2cd1d27, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b2263a9a0f98984fa32f8e88f1f44dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NoDamage: 0
-  health: 100
-  maxhealth: 100
+  health: 1
+  maxhealth: 1
+  I: {fileID: 9160315315541188616}
 --- !u!1 &9160315315541188616
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,10 +40,10 @@ GameObject:
   - component: {fileID: 9160315315541188622}
   - component: {fileID: 9160315315541188621}
   - component: {fileID: 9160315315541188619}
-  - component: {fileID: 9160315315541188618}
   - component: {fileID: 9160315315541188617}
+  - component: {fileID: 4686143286933929497}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: EnemySmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,22 +95,6 @@ MonoBehaviour:
   Agent: {fileID: 9160315315541188617}
   SecureDistance: 4
   MealeDamage: 0
---- !u!114 &9160315315541188618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9160315315541188616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123a824fe437f534f93aba3670c30cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  type: 0
-  size: 0
-  attackRange: 5
 --- !u!195 &9160315315541188617
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -128,10 +113,28 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 0.6
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4686143286933929497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9160315315541188616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf4435fce9322346a66b15c44f97a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  type: 0
+  size: 0
+  attackRange: 1.9
+  damage: 33
+  granade: {fileID: 6858286878664400855, guid: b20a0ba0a88597d4c8efb5ce83562912, type: 3}
 --- !u!1001 &9160315314964593282
 PrefabInstance:
   m_ObjectHideFlags: 0
