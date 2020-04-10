@@ -123,7 +123,7 @@ public class EventManager : MonoBehaviour
             case "D": Vector3 loc = getBaseManager().findBase(id).GetComponent<Transform>().position;
                 Debug.Log(loc);
                 Transform[] temp = getBaseManager().findBase(id).SpawnPointList;
-                getSpawnManager().spawnByBaseInvokeFixed(temp, 3,1,1);
+                getSpawnManager().spawnByBaseInvokeFixed(temp, 3,6,1);
                 break;
 
             case "R": getBaseManager().resetCurrrentBase();
@@ -146,7 +146,8 @@ public class EventManager : MonoBehaviour
             case "U": getDoorManager().unlockDoor(id);
                 break;
 
-            case "LAG": getDoorManager().lockAllGates();
+            case "LAG": Debug.Log("Lag in event m");
+                getDoorManager().lockAllGates();
                 break;
             
             default: Debug.Log("No Action defined");
@@ -206,6 +207,16 @@ public class EventManager : MonoBehaviour
     public void readFile(LinkedList<string> lista){
         string path = "Assets/Scripts/Managers/StoryScript/Script2.txt";
         
+        string s1 = "B.A.G$N.B.A.A/B.A.D$N.B.A.R/D.AB.U$N.D.AB.U/B.B.G$N.B.B.A/B.B.D$N.B.B.R/D.BC.U$N.D.BC.U/D.BF.U$N.D.BF.U/B.C.G$N.B.C.A/B.C.D$N.B.C.R/D.CG.U$N.D.CG.U/D.AE.U$N.D.AE.U/M.110,1,99.G$N.M.110,1,99.A/B.A.G$N.B.A.A/B.A.D$N.B.A.R/D.AD.U$N.D.AD.U/D.CD.U$N.D.CD.U/B.D.G$N.B.D.A/B.D.D$N.B.D.R/D.EH.U$N.D.EH.U/B.E.G$N.B.E.A/B.E.D$N.B.E.R/D.EI.U$N.D.EI.U/M.177,1,18.G";
+
+        string[] temp = s1.Split('$');
+
+        foreach (string item in temp)
+        {
+            lista.AddLast(item);
+        }
+
+        return;
         using (StreamReader sr = File.OpenText(path))
         {
             string s;

@@ -1,5 +1,4 @@
-D..LAG
-N.D..LAG/B.A.G
+B.A.G
 N.B.A.A/B.A.D
 N.B.A.R/D.AB.U
 N.D.AB.U/B.B.G

@@ -48,7 +48,7 @@ public class GateManager : MonoBehaviour
     }
 
     public void lockAllGates(){
-
+        Debug.Log("Start Gate search");
         //searching in every base
         foreach (Gate item in FindObjectsOfType<Gate>())
         {   
@@ -57,6 +57,7 @@ public class GateManager : MonoBehaviour
         }
         
         em().Notify("N.D..LAG");
+        Debug.Log("notified here gate m");
     }
 
     private EventManager em(){

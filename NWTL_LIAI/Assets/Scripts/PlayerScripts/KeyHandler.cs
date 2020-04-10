@@ -33,8 +33,12 @@ public class KeyHandler : MonoBehaviour{
         //Weapon System Keys
         gunList.ChangeWeapon(Input.GetAxis("Mouse ScrollWheel"));
 
-        if (Input.GetButtonDown("Cancel")){
+        if (Input.GetKeyDown("z")){
             Application.Quit();
+        }
+
+        if (Input.GetButtonDown("Cancel")){
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         if (Input.GetButtonDown("Reload")){

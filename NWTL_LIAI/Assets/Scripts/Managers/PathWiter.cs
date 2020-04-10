@@ -58,7 +58,25 @@ public class PathWiter : MonoBehaviour
     }
 
     public void write(){
-        string path = "Assets/Scripts/Managers/StoryScript/Script2.txt";
+        string path = "Assets/Scripts/Managers/StoryScript/Script3.txt";
+        
+        
+        if (!File.Exists(path))
+        {   
+            string s = "";
+            foreach (string item in PathList){
+                s += item + "$";
+            }
+
+            s = s.Substring(0, s.Length-1);
+
+            // Create a file to write to.
+            using (StreamWriter sw = File.CreateText(path))
+            {
+               sw.WriteLine(s);
+            }
+        }
+        return;
         if (!File.Exists(path))
         {
             // Create a file to write to.

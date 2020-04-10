@@ -68,8 +68,6 @@ public class BaseManager : MonoBehaviour
     }
 
     public BaseParent findNextBase(string id){
-        int i = 0;
-        
         
         //Search in BasePath
         if (CurrentListId.Next != null)

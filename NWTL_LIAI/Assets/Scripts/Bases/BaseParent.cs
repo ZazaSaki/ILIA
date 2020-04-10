@@ -17,11 +17,6 @@ public class BaseParent : MonoBehaviour{
     private string Notification;
 
     private void Start() {
-        if (locked){
-            cc().red();
-        }else{
-            cc().green();
-        }
 
         Notification = "N.B." + id;
         
