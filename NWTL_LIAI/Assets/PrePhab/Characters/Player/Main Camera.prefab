@@ -205,6 +205,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: -0.0000002533197
       objectReference: {fileID: 0}
+    - target: {fileID: 2114985354430540570, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2463765329652361104, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
         type: 3}
       propertyPath: fpsCam
@@ -254,6 +259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WeaponHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252171957796533931, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6252171957798433867, guid: 883a2c2c2720c104aa24b0975b3ddbbb,
         type: 3}

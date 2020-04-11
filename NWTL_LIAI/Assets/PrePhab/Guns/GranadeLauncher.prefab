@@ -56,14 +56,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5946446326801935928}
-  m_LocalRotation: {x: 0.5000001, y: 0.50000006, z: -0.4999999, w: -0.49999994}
-  m_LocalPosition: {x: -0.2917728, y: 0.20640376, z: 0.000000010265519}
+  m_LocalRotation: {x: 0.7071068, y: 0.70710677, z: -0.0000002110954, w: -0.0000002533197}
+  m_LocalPosition: {x: 0.174, y: -0.0883, z: 0.5152}
   m_LocalScale: {x: 33.000343, y: 33.000343, z: 33.000343}
   m_Children:
   - {fileID: 4035719848682707325}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 90.00001}
 --- !u!33 &5946446326798971448
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -121,7 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ddaee1ef3310624bb6694a5fec0d146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mesh: 000000000100000003000000
+  Mesh:
+  - pistol
+  - shotgun
+  id: granadeLauncher
   IsFiring: 0
   nextTimeToFire: 0
   fireRate: 0.25

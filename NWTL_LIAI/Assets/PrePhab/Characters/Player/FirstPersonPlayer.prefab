@@ -270,6 +270,11 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 714819511002824922}
+    - target: {fileID: 4069574359307201124, guid: f2718f6c7b4036a4baa3ac352f7f2f21,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5512440346510549845, guid: f2718f6c7b4036a4baa3ac352f7f2f21,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -299,6 +304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3.8872
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280910196048123139, guid: f2718f6c7b4036a4baa3ac352f7f2f21,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8280910196048152867, guid: f2718f6c7b4036a4baa3ac352f7f2f21,
         type: 3}
