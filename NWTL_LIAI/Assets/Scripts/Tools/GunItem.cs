@@ -1,0 +1,14 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GunItem : Tool
+{   
+    public GameObject drop;
+    public override void Action(Transform Player){
+        GameObject Wh = Player.GetComponentInChildren<WeaponSwitching>().gameObject;
+
+        Instantiate(drop, Wh.transform);
+        Destroy(gameObject);
+    }
+}
