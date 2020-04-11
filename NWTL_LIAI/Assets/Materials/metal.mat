@@ -7,12 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: floor
-  m_Shader: {fileID: 4800000, guid: e1f34d503f3c749f4b9870e5f4079e6a, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _NORMALMAP _OCCLUSIONMAP _PARALLAXMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
-    _SPECGLOSSMAP
+  m_Name: metal
+  m_Shader: {fileID: 4800000, guid: 5e34a73ca109940e595b0dbea95f98e9, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -21,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e6ab41658b1964df3af3b76a5d1b1c6d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CombinedMap:
@@ -29,42 +28,38 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: b285a77b5c2894622aad6d624e50f99a, type: 3}
-        m_Scale: {x: 0.95, y: 1.77}
-        m_Offset: {x: 0.31, y: 0.07}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: e6ab41658b1964df3af3b76a5d1b1c6d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1.2, y: 1.46}
-        m_Offset: {x: -0.2, y: -0.81}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1.2, y: 1.46}
-        m_Offset: {x: -0.2, y: -0.81}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: e39404d6d8835492eae0fb5bc3974a50, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 7cc02e5d0ba1a40babbb02aeaa9e8ec0, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: bde1bbe8837e740eaab7f3eaf7bb04f4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap2:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -74,15 +69,15 @@ Material:
     - _CullShadowPass: 3
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DiffuseScatteringBias: 0.016
+    - _DiffuseScatteringBias: 0
     - _DiffuseScatteringBias2: 0
-    - _DiffuseScatteringContraction: 7.7
+    - _DiffuseScatteringContraction: 8
     - _DiffuseScatteringContraction2: 8
     - _DiffuseScatteringEnabled: 1
     - _DoubleSided: 0
     - _DstBlend: 0
-    - _GlossMapScale: 0.48
-    - _Glossiness: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.67
     - _Glossiness2: 0.5
     - _GlossyReflections: 1
     - _Lighting: 0
@@ -92,16 +87,17 @@ Material:
     - _Lux_FlowNormalTiling: 2
     - _Lux_FlowRefraction: 0.02
     - _Lux_FlowSpeed: 0.05
-    - _Metallic: 0
+    - _Metallic: 1
+    - _Metallic2: 0
     - _MixMappingControl: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.046
-    - _ParallaxTiling: 2
+    - _Parallax: 0.02
+    - _ParallaxTiling: 1
     - _PuddleMask: 0
     - _PuddleMaskTiling: 1
     - _ScatteringPower: 4
-    - _SmoothnessTextureChannel: 1
+    - _SmoothnessTextureChannel: 0
     - _Snow: 0
     - _SnowDetailStrength: 0.3
     - _SnowMapping: 0
@@ -112,7 +108,7 @@ Material:
     - _SrcBlend: 1
     - _SyncWaterOfMaterials: 0
     - _TranslucencyStrength: 0.5
-    - _UVSec: 1
+    - _UVSec: 0
     - _UseCombinedMap: 0
     - _UseMixMapping: 0
     - _UsePOM: 0
@@ -120,17 +116,15 @@ Material:
     - _Wetness: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.46226418, g: 0.116022766, b: 0, a: 1}
+    - _Color: {r: 0.168, g: 0.1237, b: 0.11508, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseScatteringCol: {r: 0.103773594, g: 0.033475354, b: 0, a: 0}
+    - _DiffuseScatteringCol: {r: 0.035, g: 0.035, b: 0.035, a: 0}
     - _DiffuseScatteringCol2: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SnowAccumulation: {r: 0, g: 1, b: 0, a: 0}
     - _SnowDetailTiling: {r: 4, g: 4, b: 0, a: 0}
     - _SnowMaskTiling: {r: 0.3, g: 0.3, b: 0, a: 0}
     - _SnowTiling: {r: 2, g: 2, b: 0, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecColor2: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _UVRatio: {r: 1, g: 1, b: 0, a: 0}
     - _WaterAccumulationCracksPuddles: {r: 0, g: 1, b: 0, a: 1}
     - _WaterAccumulationCracksPuddles2: {r: 0, g: 1, b: 0, a: 1}
