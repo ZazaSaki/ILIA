@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class GunParent : MonoBehaviour
 {   //Mesh
-    public int[] Mesh; 
-
+    public string[] Mesh; 
+    public string id;
 
     public bool IsFiring = false;
     public float nextTimeToFire = 0f;
@@ -19,6 +19,14 @@ public abstract class GunParent : MonoBehaviour
     void Start(){
         WeaponHolder = GetComponentInParent<WeaponSwitching>();
         fpsCam = GetComponentInParent<Camera>();
+        
+        string[] temp = Mesh;
+        Mesh = new string[temp.Length + 1];
+        for (int i = 0; i < temp.Length; i++){
+            Debug.Log(temp[i]);
+            Mesh[i+1] = temp[i];
+        }
+        Mesh[0] = id;
     }
 
     // Update is called once per frame

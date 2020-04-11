@@ -48,7 +48,7 @@ public class WeaponSwitching : MonoBehaviour{
 
     public void selectWeapon(int gunID){
         int i = 0;
-        int[] MeshList = null;
+        string[] MeshList = null;
         //setting new weapon
         foreach (Transform weapon in GunList){
             if (i == gunID){
@@ -63,10 +63,13 @@ public class WeaponSwitching : MonoBehaviour{
         }
 
         i=0;
-         
+        
+        Debug.Log(GetActualGun().id + "searching:");
+        printList();
+        
         foreach (Transform weapon in GunList){
             
-            if (Contains(MeshList, i)){
+            if (Contains(MeshList, weapon.GetComponent<GunParent>().id)){
                 weapon.gameObject.SetActive(true);
             }else{
                 weapon.gameObject.SetActive(false);
@@ -76,14 +79,20 @@ public class WeaponSwitching : MonoBehaviour{
         
     }
 
-    private bool Contains(int[] List, int i){
-        foreach (int item in List){
-            if (i == item)
+    private bool Contains(string[] List, string id){
+        foreach (string item in List){
+            if (item.Equals(id))
             {
                 return true;
             }
         }
         return false;
+    }
+
+    private void printList(){
+        foreach (string item in GetActualGun().Mesh){
+            Debug.Log("List :" + item); 
+        }
     }
 
     public GunParent GetActualGun()
