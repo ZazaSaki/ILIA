@@ -11,10 +11,18 @@ public class WeaponSwitching : MonoBehaviour{
     public int Ammo;
     public int MaxAmmo;
 
+    bool noGun;
+
     
     // Update is called once per frame
     
     private void Start() {
+        if (GunList.childCount <= 0){
+            Debug.Log("0 Child");
+            noGun = true;
+            return;
+        }
+        
         selectWeapon(actualGunId);
     }
     
@@ -24,9 +32,21 @@ public class WeaponSwitching : MonoBehaviour{
         
     }
 
+    //change weapon by mouse wheel
     public void ChangeWeapon(float MouseWheel){
         int previousWeapon = actualGunId;
         
+        //Verify if has guns
+        if (GunList.childCount <= 0){
+            noGun = true;
+            return;
+        }
+
+        //set the first picked gun
+        if (noGun){
+            selectWeapon(actualGunId);
+        }
+
         //Checking if actualGunId is in GunList range
         if (MouseWheel > 0f){
             if (actualGunId < GunList.childCount - 1)
@@ -41,35 +61,37 @@ public class WeaponSwitching : MonoBehaviour{
                 actualGunId = GunList.childCount - 1;
         }
 
+        //Select the gun
         if (actualGunId != previousWeapon){
             selectWeapon(actualGunId);
         }
     }
 
     public void selectWeapon(int gunID){
+        
         int i = 0;
         string[] MeshList = null;
+        
         //setting new weapon
         foreach (Transform weapon in GunList){
             if (i == gunID){
-                //weapon.gameObject.SetActive(true);
+                //Picking the gun and the mesh List
                 actualGun = weapon;
                 MeshList =  weapon.GetComponent<GunParent>().Mesh;
                 break;
 
             }else
-                //weapon.gameObject.SetActive(false);
                i++;    
         }
 
         i=0;
         
-        Debug.Log(GetActualGun().id + "searching:");
-        printList();
-        
+
+        string tempId;
+        //setting the required meshes
         foreach (Transform weapon in GunList){
-            
-            if (Contains(MeshList, weapon.GetComponent<GunParent>().id)){
+            tempId = weapon.GetComponent<GunParent>().id;
+            if (Contains(MeshList, tempId) || tempId.Equals(GetActualGun().id)){
                 weapon.gameObject.SetActive(true);
             }else{
                 weapon.gameObject.SetActive(false);
@@ -79,6 +101,7 @@ public class WeaponSwitching : MonoBehaviour{
         
     }
 
+    //verify if a list contains a certain word
     private bool Contains(string[] List, string id){
         foreach (string item in List){
             if (item.Equals(id))
@@ -97,6 +120,9 @@ public class WeaponSwitching : MonoBehaviour{
 
     public GunParent GetActualGun()
     {   
+        if (actualGun == null){
+            return null;
+        }
         return actualGun.GetComponent<GunParent>();
     }
 }
