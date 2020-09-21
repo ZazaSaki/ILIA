@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GunParent : MonoBehaviour
+public abstract class GunParent : MonoBehaviour, IFireble
 {   //Mesh
     public string[] Mesh; 
     public string id;
@@ -59,5 +59,15 @@ public abstract class GunParent : MonoBehaviour
 
     protected bool IsEnoughAmmo(){
         return !(WeaponHolder.Ammo < AmmoByShot);
+    }
+
+    public void selfAssin(KeyHandler kh)
+    {
+        kh.add(this);
+    }
+
+    void IKeyHandable.id()
+    {
+        
     }
 }
