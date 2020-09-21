@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour{
+public class PlayerMovement : MonoBehaviour, IMovable{
 
     public CharacterController controller;
     public float speed;
-    public float walckSpeed = 6f;
+    public float walkSpeed = 6f;
     public float RunSpeed = 12f;
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
@@ -22,7 +22,8 @@ public class PlayerMovement : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
-        speed = walckSpeed;
+        selfAssin(GetComponentInParent<KeyHandler>());
+        speed = walkSpeed;
         
         jumpHeight = jumpHeight * multipier;
         maxFallHeight = maxFallHeight * multipier;
@@ -59,18 +60,32 @@ public class PlayerMovement : MonoBehaviour{
         }
     }
 
-    public void walck(float HorizontalAxis, float VerticalAxis){
+    public void SelfMove(float HorizontalAxis, float VerticalAxis){
         
         Vector3 move = transform.right * HorizontalAxis + transform.forward * VerticalAxis;
 
         controller.Move(move * speed * Time.deltaTime);
     }
 
-    public void setToRunSpeed(){
+    public void sprint(){
         speed = RunSpeed;
     }
     
-    public void setToWalckSpeed(){
-        speed = walckSpeed;
+    public void walk(){
+        speed = walkSpeed;
+    }
+
+    public void selfAssin(KeyHandler kh)
+    {
+        Debug.Log("adding");
+        IMovable im = this;
+        Debug.Log(im);
+        kh.add(im);
+        
+    }
+
+    public void id()
+    {
+        Debug.Log("me me me");
     }
 }

@@ -6,6 +6,9 @@ public class KeyHandler : MonoBehaviour{
 
     PlayerMovement moveScript;
     WeaponSwitching gunList;
+    IMovable IM;
+    IFireble IF;
+    
     
     private void Start() {
         moveScript = GetComponent<PlayerMovement>();
@@ -16,15 +19,17 @@ public class KeyHandler : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {   
+        
         //move keys
-        moveScript.walck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        //moveScript.SelfMove(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Move();
 
         //Move Keys
-        if (Input.GetButtonDown("Jump")){moveScript.jump();}
+        if (Input.GetButtonDown("Jump")){IM.jump();}
 
         //Run
-        if (Input.GetButtonDown("Left Shift")){moveScript.setToRunSpeed();} 
-        if (Input.GetButtonUp("Left Shift")){moveScript.setToWalckSpeed();}
+        if (Input.GetButtonDown("Left Shift")){IM.sprint();} 
+        if (Input.GetButtonUp("Left Shift")){IM.walk();}
         
         //Gun Keys
         if (Input.GetButtonDown("Fire1")){gunList.GetActualGun().Fire();}
@@ -45,4 +50,26 @@ public class KeyHandler : MonoBehaviour{
             gunList.GetActualGun().Reload();
         }
     }
+    public void add(IMovable IM){
+        Debug.Log(IM);
+        this.IM = IM;
+        
+    }
+
+    public void add(IFireble IM){
+        Debug.Log(IM);
+        this.IF = IF;
+        
+    }
+
+    public void remove(IKeyHandable IK){
+        
+    }
+
+    public void Move(){
+        
+        IM.SelfMove(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+    
+    }
+    
 }
