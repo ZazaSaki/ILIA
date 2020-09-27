@@ -8,6 +8,7 @@ public class KeyHandler : MonoBehaviour{
     WeaponSwitching gunList;
     IMovable IM;
     IFireble IF;
+    ISwitchable IS;
     
     
     private void Start() {
@@ -32,11 +33,11 @@ public class KeyHandler : MonoBehaviour{
         if (Input.GetButtonUp("Left Shift")){IM.walk();}
         
         //Gun Keys
-        if (Input.GetButtonDown("Fire1")){gunList.GetActualGun().Fire();}
+        if (Input.GetButtonDown("Fire1")){IF.Fire();}
 
 
         //Weapon System Keys
-        gunList.ChangeWeapon(Input.GetAxis("Mouse ScrollWheel"));
+        IS.Switch(Input.GetAxis("Mouse ScrollWheel"));
 
         if (Input.GetKeyDown("z")){
             Application.Quit();
@@ -56,10 +57,15 @@ public class KeyHandler : MonoBehaviour{
         
     }
 
-    public void add(IFireble IM){
+    public void add(IFireble IF){
         Debug.Log(IM);
         this.IF = IF;
         
+    }
+
+    public void add(ISwitchable IS){
+        Debug.Log(IS);
+        this.IS = IS;
     }
 
     public void remove(IKeyHandable IK){

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponSwitching : MonoBehaviour{
+public class WeaponSwitching : MonoBehaviour, ISwitchable{
     private Transform actualGun;
     
     public Transform GunList;
@@ -24,6 +24,8 @@ public class WeaponSwitching : MonoBehaviour{
         }
         
         selectWeapon(actualGunId);
+
+        selfAssin(GetComponentInParent<KeyHandler>());
     }
     
     void Update(){
@@ -33,7 +35,7 @@ public class WeaponSwitching : MonoBehaviour{
     }
 
     //change weapon by mouse wheel
-    public void ChangeWeapon(float MouseWheel){
+    public void Switch(float MouseWheel){
         int previousWeapon = actualGunId;
         
         //Verify if has guns
@@ -78,6 +80,7 @@ public class WeaponSwitching : MonoBehaviour{
                 //Picking the gun and the mesh List
                 actualGun = weapon;
                 MeshList =  weapon.GetComponent<GunParent>().Mesh;
+                GetActualGun().selfAssin(GetComponentInParent<KeyHandler>());
                 break;
 
             }else
@@ -124,5 +127,15 @@ public class WeaponSwitching : MonoBehaviour{
             return null;
         }
         return actualGun.GetComponent<GunParent>();
+    }
+
+    public void selfAssin(KeyHandler kh)
+    {
+        kh.add(this);
+    }
+
+    public void id()
+    {
+        Debug.Log("it's meeeeeee switch switch");
     }
 }
