@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5095912246538034291}
+  - component: {fileID: 3894928492461205426}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ShotgunDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6086111258467464598
+--- !u!114 &3894928492461205426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9073046125170870167}
+  m_GameObject: {fileID: 7529101005836972317}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fcf892afd1ae02448ad684337b623e7, type: 3}
@@ -52,6 +53,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5095912246538034291}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 218679914014409906, guid: 1de196221d47c1c46a3a06879156076f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -142,11 +147,6 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: -0.0000003745235
       objectReference: {fileID: 0}
-    - target: {fileID: 218679914014409917, guid: 1de196221d47c1c46a3a06879156076f,
-        type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 6086111258467464598}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de196221d47c1c46a3a06879156076f, type: 3}
 --- !u!4 &1089240902081574593 stripped
@@ -224,12 +224,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aca95a5dbc9b504c80c91231cb10378, type: 3}
---- !u!1 &9073046125170870167 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 7aca95a5dbc9b504c80c91231cb10378,
-    type: 3}
-  m_PrefabInstance: {fileID: 9073046125170835767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9073046125170973623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7aca95a5dbc9b504c80c91231cb10378,

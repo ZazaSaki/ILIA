@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5095912246538034291}
+  - component: {fileID: 8442715924299712189}
   m_Layer: 0
   m_Name: PistolDrop
   m_TagString: Untagged
@@ -32,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8566645701130919998
+--- !u!114 &8442715924299712189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8458590682521707653}
+  m_GameObject: {fileID: 7529101005836972317}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fcf892afd1ae02448ad684337b623e7, type: 3}
@@ -146,8 +147,9 @@ PrefabInstance:
         type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 8566645701130919998}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 218679914014409917, guid: 1de196221d47c1c46a3a06879156076f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1de196221d47c1c46a3a06879156076f, type: 3}
 --- !u!4 &1089240902081574593 stripped
 Transform:
@@ -212,12 +214,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45cd0fdc95eb4444eb7c45500ed2d47e, type: 3}
---- !u!1 &8458590682521707653 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: 45cd0fdc95eb4444eb7c45500ed2d47e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8458590682521739815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8458590682521876645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 45cd0fdc95eb4444eb7c45500ed2d47e,
