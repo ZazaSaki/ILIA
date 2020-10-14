@@ -13,43 +13,35 @@ public class KeyHandler : MonoBehaviour{
     
     private void Start() {
         moveScript = GetComponent<PlayerMovement>();
-        gunList = GetComponentInChildren<WeaponSwitching>();
+        IS = gunList = GetComponentInChildren<WeaponSwitching>();
         
     }
     
     // Update is called once per frame
     void Update()
     {   
-        
+        //extra priority keys
+        if (Input.GetKeyDown("z")){Application.Quit();}
+        if (Input.GetButtonDown("Cancel")){Cursor.lockState = CursorLockMode.Confined;}
+
         //move keys
         //moveScript.SelfMove(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Move();
+        
 
         //Move Keys
         if (Input.GetButtonDown("Jump")){IM.jump();}
-
-        //Run
         if (Input.GetButtonDown("Left Shift")){IM.sprint();} 
         if (Input.GetButtonUp("Left Shift")){IM.walk();}
+        Move();
+
+        //if (IS == null)return;
+        
+        //Weapon System Keys
+        IS.Switch(Input.GetAxis("Mouse ScrollWheel"));
         
         //Gun Keys
         if (Input.GetButtonDown("Fire1")){IF.Fire();}
-
-
-        //Weapon System Keys
-        IS.Switch(Input.GetAxis("Mouse ScrollWheel"));
-
-        if (Input.GetKeyDown("z")){
-            Application.Quit();
-        }
-
-        if (Input.GetButtonDown("Cancel")){
-            Cursor.lockState = CursorLockMode.Confined;
-        }
-
-        if (Input.GetButtonDown("Reload")){
-            gunList.GetActualGun().Reload();
-        }
+        if (Input.GetButtonDown("Reload")){IF.Reload();}
     }
     public void add(IMovable IM){
         Debug.Log(IM);
@@ -66,10 +58,11 @@ public class KeyHandler : MonoBehaviour{
     public void add(ISwitchable IS){
         Debug.Log(IS);
         this.IS = IS;
+        Debug.Log("IS signed in");
     }
 
     public void remove(IKeyHandable IK){
-        
+        IK = null;  
     }
 
     public void Move(){

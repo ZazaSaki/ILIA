@@ -18,7 +18,7 @@ public class Gate : Door
 
     }
 
-    override public void Action(Transform Player){
+    override public void Action(){
         if (Opened)close(); else open();
     }
 

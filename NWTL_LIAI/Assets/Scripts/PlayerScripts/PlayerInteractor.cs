@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class PlayerInteractor : MonoBehaviour
 {
-    private Tool interact = null;
+    private IActivatable interact = null;
 
 
     private void Update() {
         
         if (Input.GetButtonDown("Interact") && interact != null){
-            interact.Action(GetComponent<Transform>());
+            interact.Action();
         }
     }
-    public void setInteract(Tool item){
+    public void setInteract(IActivatable item){
         if (item != null){
           interact = item;  
         }
+    }
+
+    public void setInteract(){
+
     }
 
     public void resetInteract(){

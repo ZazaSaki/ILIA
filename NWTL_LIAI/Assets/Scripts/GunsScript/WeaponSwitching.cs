@@ -25,6 +25,7 @@ public class WeaponSwitching : MonoBehaviour, ISwitchable{
         
         selectWeapon(actualGunId);
 
+        Debug.Log("trying self assigng");
         selfAssin(GetComponentInParent<KeyHandler>());
     }
     
@@ -131,11 +132,13 @@ public class WeaponSwitching : MonoBehaviour, ISwitchable{
 
     public void selfAssin(KeyHandler kh)
     {
+        id();
+        Debug.Log("adding");
         kh.add(this);
     }
 
     public void id()
     {
-        Debug.Log("it's meeeeeee switch switch");
+        Debug.Log("Weapon Switch");
     }
 }

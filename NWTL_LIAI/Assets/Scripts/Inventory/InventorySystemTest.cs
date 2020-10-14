@@ -40,7 +40,7 @@ public class InventorySystemTest : Tool
         }
     }
 
-    public override void Action(Transform Player){
+    public override void Action(){
         
     }
 }

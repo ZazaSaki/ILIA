@@ -5,10 +5,13 @@ using UnityEngine;
 public class GunItem : Tool
 {   
     public GameObject drop;
-    public override void Action(Transform Player){
-        GameObject Wh = Player.GetComponentInChildren<WeaponSwitching>().gameObject;
+    
+    public override void Action(){
+        
+        GameObject Wh = comp.GetComponentInChildren<WeaponSwitching>().gameObject;
 
         Instantiate(drop, Wh.transform);
         Destroy(gameObject);
     }
+
 }

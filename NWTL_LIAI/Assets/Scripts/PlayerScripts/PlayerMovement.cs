@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour, IMovable{
 
     public void selfAssin(KeyHandler kh)
     {
+        id();
         Debug.Log("adding");
         IMovable im = this;
         Debug.Log(im);
@@ -86,6 +87,6 @@ public class PlayerMovement : MonoBehaviour, IMovable{
 
     public void id()
     {
-        Debug.Log("me me me");
+        Debug.Log("Player movement");
     }
 }
