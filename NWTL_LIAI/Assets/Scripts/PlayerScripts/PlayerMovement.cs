@@ -13,12 +13,12 @@ public class PlayerMovement : MonoBehaviour, IMovable{
     public float multipier = 1f;
     
     public Transform groundCheck;
-    public LayerMask groundMask;
+    public LayerMask groundMask, vehicleMask;
 
     public bool IsRunning = false;
     
     Vector3 velocity;
-    bool isGrounded;
+    bool isGrounded, isVehicled;
 
     // Start is called before the first frame update
     void Start(){
@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour, IMovable{
     void Update(){
         
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
+        isVehicled = Physics.CheckSphere(groundCheck.position, groundDistance, vehicleMask);
+        isGrounded = isGrounded || isVehicled;
         
         if (isGrounded && velocity.y < 0){
             
