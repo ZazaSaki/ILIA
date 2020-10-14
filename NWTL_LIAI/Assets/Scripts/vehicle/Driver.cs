@@ -41,6 +41,6 @@ public class Driver : Tool, IMovable
     public override void Action()
     {
         Debug.Log("selfassin");
-        //selfAssin(comp.GetComponent<KeyHandler>());
+        selfAssin(comp.GetComponent<KeyHandler>());
     }
 }
